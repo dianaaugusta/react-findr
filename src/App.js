@@ -5,12 +5,13 @@ import "primeicons/primeicons.css";                                //icons
  
 import './App.css';
 import './styles/findr-menu-style.css'
-import FindrMenu from "./components/findr-menu";
-
+import Suporte from "./pages/suporte";
 function App() {
   return (
-    <FindrMenu/>
-  );
+    <>
+    <Suporte />
+    </>
+     );
 }
 
 export default App;

@@ -1,0 +1,36 @@
+body{
+    background-image: url('../../src/keyboard.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-help-question{
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-help-question h1{
+    font-weight: normal;
+    font-size: xx-large;
+}
+
+.p-inputtext{
+    width: 100vh;
+    border-radius: 50px;
+}
+
+.container-sup-page{
+    background-color: transparent;
+    margin-top: 20%;
+    float: right;
+}
+
+.container-faq-imports{
+    background-color: white;
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-bottom: 3em;
+}
