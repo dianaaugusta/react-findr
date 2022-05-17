@@ -1,7 +1,6 @@
 body{
     background-image: url('../../src/keyboard.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .container-help-question{
@@ -23,6 +22,8 @@ body{
 
 .container-sup-page{
     background-color: transparent;
+    width: 80%;
+    padding-right: 1em;
     margin-top: 20%;
     float: right;
 }

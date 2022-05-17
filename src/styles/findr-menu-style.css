@@ -33,6 +33,11 @@
     font-size: 30px;
 }
 
+.user-return-container h1:hover{
+    color: purple;
+    transition: 0.25s;
+}
+
 .user-return-container img{
     width: 3em;
     height: 3em;
@@ -41,7 +46,9 @@
     background-size: initial;
 }
 
+
 .p-menu.p-component.menu-findr{
+    font-size: 20px;
     border: none;
     width: 100%;
 }

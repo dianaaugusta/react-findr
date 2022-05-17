@@ -6,6 +6,7 @@ import "primeicons/primeicons.css";                                //icons
 import './App.css';
 import './styles/findr-menu-style.css'
 import Suporte from "./pages/suporte";
+import FaqComponent from "./components/findr-faq-component";
 function App() {
   return (
     <>
