@@ -1,44 +1,38 @@
 import { AutoComplete } from 'primereact/autocomplete';
 import { useEffect, useState } from 'react';
-import axios from "axios";
 import { AutoCompleteService } from './findr-autocomplete-service';
+const countryservice = new AutoCompleteService();
 
 function FindrAutocomplete() {
     const [countries, setCountries] = useState([]);
-    const [selectedSugestion, setselectedSugestion] = useState([]);
-    const [filteredSugestion, setFilteredSugestion] = useState([]);
+    const [selectedCountry1, setSelectedCountry1] = useState([]);
+    const [filteredCountries, setFilteredCountries] = useState([]);
 
-    useEffect(() =>{
-        const loadCountries = async () =>{
-            const res = await axios.get("https://restcountries.com/v3.1/all");
-            setCountries(res.data);
-        }
-        loadCountries();
+    useEffect(() => {
+        countryservice.getCountries().then(data => setCountries(data));
+        console.log("data,", countries);
     }, []); 
 
-    console.log(countries);
-
-    const searchOption = (e) => {
-        let query = e.query;
-        let filteredSugestion = [];
-
-        for(let i = 0; i < countries.length; i++) {
-            let country = countries[i];
-            if (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0) {
-                filteredSugestion.push(country);
+    const searchCountry = (event) => {
+        setTimeout(() => {
+            let _filteredCountries;
+            if (!event.query.trim().length) {
+                _filteredCountries = [...countries];
             }
-        }
-        setFilteredSugestion(filteredSugestion);
+            else {
+                _filteredCountries = countries.filter((country) => {
+                    console.log("prova", country.name)
+                    return country.name.toLowerCase().startsWith(event.query.toLowerCase());
+                });
+            }
+
+            setFilteredCountries(_filteredCountries);
+        }, 250);
     }
 
     return (
     <>
-    <div>
-        <AutoComplete placeholder='Digite aqui o que procura...' 
-        suggestions = {countries}
-        completeMethod = {searchOption}
-        onChange = {(e)=> searchOption(e.value)}/>
-        </div>
+    <AutoComplete value={selectedCountry1} suggestions={filteredCountries} completeMethod={searchCountry} field="name" onChange={(e) => setSelectedCountry1(e.value)} aria-label="Countries" />
     </>  
     );
 

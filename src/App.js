@@ -4,13 +4,13 @@ import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";                                //icons
  
 import './App.css';
-import './styles/findr-menu-style.css'
 import Suporte from "./pages/suporte";
 import FaqComponent from "./components/findr-faq-component";
+import FindrLogin from "./pages/login-findr";
 function App() {
   return (
     <>
-    <Suporte />
+    <FindrLogin/>
     </>
      );
 }
