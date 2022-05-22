@@ -23,6 +23,8 @@
 
 .saudacao-usuario .p-inputtext.p-component{
     width: 100%;
+    border-radius: 10px;
+    margin-top: 0.5em;
 }
 
 .password-options{
@@ -30,17 +32,22 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    padding-top: 1rem;
 }
 
 .also-login{
     /* background-color: blue; */
     display: flex;
     justify-content: center;
+    font-size: x-large;
+    color: dimgray;
+    font-weight: 400;
 }
 
 .login-options{
     display: flex;
     justify-content: space-evenly;
+    padding-top: 2em;
 }
 
 .pi:before{
@@ -64,4 +71,18 @@
     background-color: #ea4335;
     padding: 0.5em;
     border-radius: 50%;
+}
+
+.a-href-password{
+    text-emphasis: none;
+    text-decoration: none;
+    color: black;
+}
+
+.text-greetings{
+    font-weight: 300;
+}
+
+.button-login{
+    margin-top: 1em;
 }
