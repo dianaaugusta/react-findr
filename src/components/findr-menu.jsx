@@ -12,9 +12,8 @@ function FindrMenu() {
         {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: ''},
         {label: 'Notícias', icon: 'pi pi-fw pi-globe',  url: ''},
         {label: 'Freeduca', icon: 'pi pi-fw pi-pencil',  url: ''},
-        {label: 'Suporte', icon: 'pi pi-fw pi-question-circle',  url: ''},
-        {label: 'Pornorgrafia', icon: 'pi pi-fw pi-pencil', url: ''}
-    ];
+        {label: 'Suporte', icon: 'pi pi-fw pi-question-circle',  url: ''}
+    ]
 
     return (
         <>
