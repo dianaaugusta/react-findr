@@ -1,0 +1,51 @@
+.ajuste-tela{
+    display: flex;
+}
+.card-cadastro{
+    display: grid;
+    grid-template-columns: auto;
+    margin-top: 2%;
+    width: 100%;
+}
+
+.imagem-cadastro{
+    background-color: red;
+    margin-left: 8%;
+    margin-top: 2%;
+    width: 100%;
+    height: 94vh;
+}
+.formulario-cadastro{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.input-cadastro{
+    padding-top: 32px;
+    font-size: 30px;
+    width: 75%;
+    margin-left: 50px;
+}
+
+.input-cadastro input{
+    width: 100%;
+    height: 35px;
+    background-color: #EDF2F5;
+}
+.check-box{
+    text-align: center;
+}
+.frases-cadastro{
+    text-align: center;
+}
+
+.frases-cadastro button{
+    text-align: center;
+    border-radius: 20;
+    margin-top: 30px;
+    height: 40px;
+    width: 186.56px;
+}
