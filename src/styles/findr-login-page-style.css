@@ -1,6 +1,88 @@
+.logo{
+    width: 7em;
+    height: 2em;
+}
+
+
 .container-login-user{
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
-    background-color: red;
+    padding-right: 1em;
+
+}
+
+.saudacao-usuario{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 1em;
+}
+
+.saudacao-usuario .p-inputtext.p-component{
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 0.5em;
+}
+
+.password-options{
+    text-decoration: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+
+.also-login{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    color: dimgray;
+    font-weight: 400;
+}
+
+.login-options{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2em;
+}
+
+.pi:before{
+    font-size: 2em;
+    color: beige;
+}
+
+.pi-facebook:before{
+    background-color: blue;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.pi-twitter:before{
+    background-color: #1da1f2;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.pi-google:before{
+    background-color: #ea4335;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.a-href-password{
+    text-emphasis: none;
+    text-decoration: none;
+    color: black;
+}
+
+.text-greetings{
+    font-weight: 300;
+}
+
+.button-login{
+    margin-top: 1em;
 }
