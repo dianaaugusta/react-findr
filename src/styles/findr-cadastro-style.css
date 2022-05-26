@@ -8,11 +8,11 @@
     width: 100%;
 }
 
-.imagem-cadastro{
+.imagem-cadastro img{
     background-color: red;
-    margin-left: 8%;
-    margin-top: 2%;
-    width: 100%;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 450px;
     height: 94vh;
 }
 .formulario-cadastro{

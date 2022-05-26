@@ -7,11 +7,10 @@ import "../styles/findr-cadastro-style.css"
 function Cadastro() {
     return (
         <>
-
-
             <div class="ajuste-tela">
             <h1>Findr</h1>
                 <div class="imagem-cadastro">
+                    <img src="https://images.pexels.com/photos/3201585/pexels-photo-3201585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                 </div>
                 <div className='card-cadastro'>
                     <div className='frases-cadastro'>
@@ -55,7 +54,6 @@ function Cadastro() {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
