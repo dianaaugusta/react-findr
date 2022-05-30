@@ -8,7 +8,7 @@
     display: flex;
     margin-left: 5%;
     width: 90%;
-    height: 90vh;
+    height: 98vh;
     border-radius: 10px;
 }
 
@@ -34,6 +34,7 @@
 
 .container-inputs input{
     width: 19em;
+    height: 2em;
 }
 
 .text-input{
@@ -44,6 +45,9 @@
     position: absolute;
 }
 
+.individual-input-cadastro p{
+    font-size: 10px;
+}
 
 .text-acceptance{
     display: flex;
@@ -66,4 +70,15 @@
 
 .login-here a{
     margin-left: 0.5em;
+}
+
+#checkbox-accept{
+    width: 1em;
+    height: 1em;
+    margin-top: 0.5em;
+    margin-right: 1em;
+}
+
+.i-acceptance{
+    display: inline-flex;
 }
