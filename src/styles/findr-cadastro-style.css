@@ -20,12 +20,10 @@
 }
 
 .container-inputs{
-    display: grid;
     padding-top: 5em;
     padding-left: 3em;
     width: 100%;
     align-items: center;
-    grid-template-columns: 100px 100px;
     background-color: white;
     border-radius: 10px;
     /* grid-template-rows: 1fr 1fr; */
@@ -43,6 +41,13 @@
     margin-bottom: 10px;
     padding-left: 40%;
     position: absolute;
+}
+
+
+.individual-input-cadastro{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    background-color: green;
 }
 
 .individual-input-cadastro p{

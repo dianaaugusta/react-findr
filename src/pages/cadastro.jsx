@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import "../styles/findr-cadastro-style.css"
 import { axios } from 'axios';
 
+const opcoes = ["nome", "email", "cpf", "telefone", "senha", "confirmar senha", "estado", "cidade"];
+
+
 function postUser() {
 
 };
@@ -24,41 +27,9 @@ function Cadastro() {
 
                     <div className="container-inputs">
                         <div class="individual-input-cadastro">
-                            <p>Nome:</p>
-                            <FindrInput id=""/>
+                             { opcoes.map( (opcao) => <FindrInput label={opcao} id=""/>  ) }
                         </div>
-                        <div class="individual-input-cadastro">
-                            <p>CPF:</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>E-mail:</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Telelfone:</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Senha:</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Confirmar senha:</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Estado:</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Cidade</p>
-                            <FindrInput id="" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Nacionalidade</p>
-                            <FindrInput id="" />
-                        </div>
+                       
                         <br />
                         <div className="text-acceptance">
                             <h3 className='i-acceptance'> <input type="checkbox" id="checkbox-accept" /> Eu aceito os termos de uso</h3>
