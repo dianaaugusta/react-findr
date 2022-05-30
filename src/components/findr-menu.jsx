@@ -6,6 +6,8 @@ import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";  
 
 function FindrMenu() {
+    const userAtivo = window.localStorage.getItem('user');
+
     let items = [
         {label: 'Perfil', icon: 'pi pi-fw pi-user', url: ''},
         {label: 'Conexões', icon: 'pi pi-fw pi-sitemap',  url: ''},
@@ -21,7 +23,7 @@ function FindrMenu() {
         <div class="user-return-container">
             <i class="pi pi-chevron-left icon-return"></i>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTigVlKpVHfeV-s3CdRHpA0nYIirGVIRLsjaw&usqp=CAU" alt="" />
-           <h1>Jair</h1>
+           <h1>{userAtivo}</h1>
         </div>
         <Menu model={items} className="menu-findr"/>
         </div>

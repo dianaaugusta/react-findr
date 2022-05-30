@@ -1,7 +1,7 @@
 
 import FindrInput from "../components/findr-input";
 import '../styles/findr-login-page-style.css';
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
@@ -14,11 +14,14 @@ const handleClick = () => {
 }
 
 function FindrLogin() {
+    const[loginInfo, setLoginInfo] = useState('');
     
-   
+    const handleCallback = (childData) =>{
+        setLoginInfo(childData)
+    }
+
     return (
         <>
-
         <div className="logo-findr">
             <img src="https://i.imgur.com/DGkk638.png" alt="" className="logo" />
         </div>
@@ -27,9 +30,9 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <FindrInput id="input_id" tooltip="abc" />
+                    <FindrInput id="input_id" tooltip="abc" handleCallback={handleCallback}/>
                     <FindrInput tooltip="abc" />
-                    <Button component={Link} to="/suporte">Click Me</Button>
+                    <Button component={Link} to="/suporte" onClick={() => localStorage.setItem('user', loginInfo)}>Click Me</Button>
                         <div className="password-options">
                             <a href="#" className="a-href-password">Esqueceu a senha?</a>
                             <a href="#" className="a-href-password">Recuperar Senha</a>

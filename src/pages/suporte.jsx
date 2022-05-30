@@ -4,7 +4,6 @@ import FindrMenu from "../components/findr-menu"
 import '../styles/findr-sup-page-style.css'
 
 function Suporte() {
-
     return (
         <>
             <FindrMenu/>
