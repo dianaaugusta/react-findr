@@ -49,8 +49,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 65vw;
+    width: 54vw;
     text-align: center;
+}
+.text-acceptance input{
+    display: block;
+
 }
 .text-acceptance button{
     width: 60%;

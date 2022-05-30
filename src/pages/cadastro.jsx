@@ -2,10 +2,17 @@ import { InputText } from 'primereact/inputtext';
 import { Checkbox } from 'primereact/checkbox';
 import FindrInput from "../components/findr-input";
 import FindrButton from '../components/findr-button';
+import { Link } from 'react-router-dom'
 import "../styles/findr-cadastro-style.css"
+import  {axios} from 'axios';
+
+function postUser(){
+    
+};
 
 
 function Cadastro() {
+
     return (
         <>
             <div class="ajuste-tela">
@@ -27,8 +34,8 @@ function Cadastro() {
                         <FindrInput/>
                             <br />
                         <div className="text-acceptance">
-                            <h3 className='i-acceptance'> Eu aceito os termos de uso</h3>        
-                                <FindrButton label="Cadastro"/>
+                            <h3 className='i-acceptance'> <input type="checkbox" /> Eu aceito os termos de uso</h3>        
+                                <FindrButton component={Link} to="localhost:8080/freelancer" onClick={() => postUser()} label="Cadastro"/>
                                 <h4 className='login-here'>Já tem conta? Faça o login <a href="#">aqui</a> </h4>
                         </div>
                     </div>
