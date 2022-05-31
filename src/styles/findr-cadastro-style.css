@@ -20,16 +20,11 @@
 }
 
 .container-inputs{
-    display: grid;
-    padding-top: 3em;
-    padding-left: 3em;
-    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 70%;
     align-items: center;
-    grid-template-columns: 100px 100px;
     background-color: white;
-    border-radius: 10px;
-    /* grid-template-rows: 1fr 1fr; */
-    column-gap: 15em;
 }
 
 .container-inputs input{
@@ -39,9 +34,8 @@
 
 .text-input{
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 40%;
+    padding-left: 2vw;
+    margin-bottom: 90vh;
     position: absolute;
 }
 
@@ -82,4 +76,19 @@
 
 .i-acceptance{
     display: inline-flex;
+}
+
+.form-inputs{
+    display: grid;
+    grid-template-columns: repeat(2, 20em);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding-top: 2em;
+    justify-content: center;
+}
+
+
+.individual-input-cadastro input{
+    border-radius: 15px;
+    border:1px solid black;
 }

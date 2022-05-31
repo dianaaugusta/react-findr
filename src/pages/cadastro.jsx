@@ -25,7 +25,7 @@ function Cadastro() {
             avaliableTime: tempoInput,
             fkPlanFreelancer: {
                 idPlan: planoInput,
-                planType:"",
+                planType: "",
                 quantityClicks: ""
             },
             name: nameInput,
@@ -41,9 +41,9 @@ function Cadastro() {
 
         api.post("freelancer", objFreelancer).then(res => {
             alert("cadastrado com sucesso!");
-            console.log(objFreelancer)
+            window.location.href("/login");
         }).catch(erro => {
-            alert("deu ruim!");
+            alert("Erro no cadastro!");
             console.log(objFreelancer)
             console.log(erro);
         })
@@ -54,40 +54,41 @@ function Cadastro() {
             <div class="ajuste-tela">
                 <div className="container-content-form">
                     <img src="https://images.pexels.com/photos/3201585/pexels-photo-3201585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                    <div className="text-input">
-                        <p>Crie sua conta de freelancer e encontre projetos de forma rápida e prática</p>
-                    </div>
-                        <div className="container-inputs">
-                    <form onSubmit={postUser}>
+
+                    <div className="container-inputs">
+                        <div className="text-input">
+                            <p>Crie sua conta de freelancer e encontre projetos de forma rápida e prática</p>
+                        </div>
+                        <form onSubmit={postUser} className="form-inputs">
                             <div class="individual-input-cadastro">
                                 <p>Nome:</p>
                                 <input type="text" value={nameInput} onChange={((event) => {
                                     setNameInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>CPF:</p>
                                 <input type="text" value={cpfInput} onChange={((event) => {
                                     setCpfInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>E-mail:</p>
                                 <input type="text" value={emailInput} onChange={((event) => {
                                     setEmailInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Telefone:</p>
                                 <input type="text" value={telefoneInput} onChange={((event) => {
                                     setTelefoneInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Senha:</p>
                                 <input type="text" value={senhaInput} onChange={((event) => {
                                     setSenhaInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Confirmar senha:</p>
@@ -97,31 +98,31 @@ function Cadastro() {
                                 <p>Nacionalidade</p>
                                 <input type="text" value={nacionalidadeInput} onChange={((event) => {
                                     setNacionalidadeInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Estado:</p>
                                 <input type="text" value={estadoInput} onChange={((event) => {
                                     setEstadoInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Cidade</p>
                                 <input type="text" value={cidadeInput} onChange={((event) => {
                                     setCidadeInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Tempo disponível:</p>
                                 <input type="text" value={tempoInput} onChange={((event) => {
                                     setTempoInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Plano:</p>
                                 <input type="text" value={planoInput} onChange={((event) => {
                                     setPlanoInput(event.target.value)
-                                })}/>
+                                })} />
                             </div>
                             <br />
                             <div className="text-acceptance">
@@ -129,8 +130,8 @@ function Cadastro() {
                                 <button type='submit'>Click Me</button>
                                 <h4 className='login-here'>Já tem conta? Faça o login <a href="#">aqui</a> </h4>
                             </div>
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>
