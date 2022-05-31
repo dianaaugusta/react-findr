@@ -13,7 +13,6 @@ function FindrInput(props){
 
     return(
         <>
-        <p>{props.label}</p> 
         <InputText id={props.id} tooltip={props.tooltip} value={value} onChange={(e) => getData(e)} />
         </>
     );
