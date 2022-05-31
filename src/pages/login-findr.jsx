@@ -44,14 +44,16 @@ function FindrLogin() {
         <div className="logo-findr">
             <img src="https://i.imgur.com/DGkk638.png" alt="" className="logo" />
         </div>
-            <div className="container-login-user">
+    
+        <div className="container-login-user">
+            <img src="https://campicconsultoria.com/wp-content/uploads/2020/06/undraw_remotely_2j6y.png" alt="" id="imgLogin"/>
                 <div className="saudacao-usuario">
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <FindrInput id="input_id" tooltip="abc"/>
-                    <FindrInput id="input_senha" tooltip="abc" />
-                    <Button onClick={() => autenticar()}>Click Me</Button>
+                    <FindrInput id="input_id" tooltip="Usuario"/>
+                    <FindrInput id="input_senha" tooltip="Senha" type="password"/>
+                    <Button onClick={() => autenticar()}>Fazer Login</Button>
                         <div className="password-options">
                             <a href="#" className="a-href-password">Esqueceu a senha?</a>
                             <a href="#" className="a-href-password">Recuperar Senha</a>

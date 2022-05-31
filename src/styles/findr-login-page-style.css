@@ -5,9 +5,10 @@
 
 
 .container-login-user{
-    width: 100%;
+    float: right;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-end;
     padding-right: 1em;
 
@@ -52,7 +53,9 @@
 
 .pi:before{
     font-size: 2em;
+    font-size: 1.5em;
     color: beige;
+    margin-bottom: 3em;
 }
 
 .pi-facebook:before{
@@ -86,3 +89,15 @@
 .button-login{
     margin-top: 1em;
 }
+
+.container-img-login{
+    display: flex;
+    justify-content: flex-start;
+    width: 30em;
+}
+
+.container-login-user img{
+    width: 40em;
+    height: 40em;
+}
+
