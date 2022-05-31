@@ -1,45 +1,53 @@
-import { InputText } from 'primereact/inputtext';
-import { Checkbox } from 'primereact/checkbox';
 import FindrInput from "../components/findr-input";
-import FindrButton from '../components/findr-button';
-import { Link, Navigate } from 'react-router-dom'
 import "../styles/findr-cadastro-style.css"
-import { axios } from 'axios';
 import api from '../api';
-import CadastroFreelancerRequest from './models/CadastroFreelancerRequest';
-import { Button } from 'antd';
-
-function postUser(){
-    let inputName = document.getElementById("name");
-    let inputEmail = document.getElementById("email");
-    let inputPassword = document.getElementById("password")
-    let inputCpf = document.getElementById("cpf")
-    let inputCnpj = "null"
-    let inputPhoneContact = document.getElementById("telefone")
-    let inputEstado = document.getElementById("estado")
-    let inputCidade = document.getElementById("cidade")
-    let inputNacionalidade = document.getElementById("nacionalidade")
-    let inputTempo = document.getElementById("tempo_disponivel")
-    let inputPlano = document.getElementById("plano")
-
-
-    let user = new CadastroFreelancerRequest(inputName.value, inputEmail, inputPassword, inputCpf, inputCnpj, inputPhoneContact, inputEstado, inputCidade, inputNacionalidade, inputTempo, inputPlano );
-
-    api.post("freelancer".value, user).then((resposta) => {
-        console.log(resposta)
-        if (resposta.status === 201) {
-            alert("Logado")
-            Navigate('/login')
-            
-        }
-        else{
-            alert("falhou")
-        }
-    })
-}
+import React, { useState } from 'react';
 
 
 function Cadastro() {
+
+    const [nameInput, setNameInput] = useState("");
+    const [cpfInput, setCpfInput] = useState("");
+    const [emailInput, setEmailInput] = useState("");
+    const [telefoneInput, setTelefoneInput] = useState("");
+    const [senhaInput, setSenhaInput] = useState("");
+    const [nacionalidadeInput, setNacionalidadeInput] = useState("");
+    const [estadoInput, setEstadoInput] = useState("");
+    const [cidadeInput, setCidadeInput] = useState("");
+    const [tempoInput, setTempoInput] = useState("");
+    const [planoInput, setPlanoInput] = useState("");
+
+    function postUser(e) {
+        e.preventDefault();
+
+        const objFreelancer = {
+            idUserFreelancer: "",
+            avaliableTime: tempoInput,
+            fkPlanFreelancer: {
+                idPlan: planoInput,
+                planType: "",
+                quantityClicks: ""
+            },
+            name: nameInput,
+            email: emailInput,
+            password: senhaInput,
+            cpf: cpfInput,
+            cnpj: cpfInput,
+            phoneContact: telefoneInput,
+            country: nacionalidadeInput,
+            state: estadoInput,
+            city: cidadeInput
+        }
+        console.log(cpfInput.value, emailInput.value)
+
+        api.post("freelancer", objFreelancer).then(res => {
+            alert("cadastrado com sucesso!");
+        }).catch(erro => {
+            alert("deu ruim!");
+            console.log(objFreelancer)
+            console.log(erro);
+        })
+    }
 
     return (
         <>
@@ -49,58 +57,59 @@ function Cadastro() {
                     <div className="text-input">
                         <p>Crie sua conta de freelancer e encontre projetos de forma rápida e prática</p>
                     </div>
-
                     <div className="container-inputs">
-                        <div class="individual-input-cadastro">
-                            <p>Nome:</p>
-                            <FindrInput id="name"/>
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>CPF:</p>
-                            <FindrInput id="cpf" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>E-mail:</p>
-                            <FindrInput id="email" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Telefone:</p>
-                            <FindrInput id="telefone" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Senha:</p>
-                            <FindrInput id="password" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Confirmar senha:</p>
-                            <FindrInput id="confirm-senha" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Estado:</p>
-                            <FindrInput id="estado" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Cidade</p>
-                            <FindrInput id="cidade" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Nacionalidade</p>
-                            <FindrInput id="nacionalidade" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Tempo disponível:</p>
-                            <FindrInput id="tempo_disponivel" />
-                        </div>
-                        <div class="individual-input-cadastro">
-                            <p>Plano:</p>
-                            <FindrInput id="plano" />
-                        </div>
-                        <br />
-                        <div className="text-acceptance">
-                            <h3 className='i-acceptance'> <input type="checkbox" id="checkbox-accept" /> Eu aceito os termos de uso</h3>
-                            <Button onClick={() => postUser()}>Click Me</Button>
-                            <h4 className='login-here'>Já tem conta? Faça o login <a href="#">aqui</a> </h4>
-                        </div>
+                        <form onSubmit={postUser}>
+                            <div class="individual-input-cadastro">
+                                <p>Nome:</p>
+                                <FindrInput value={nameInput} onChange={e => setNameInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>CPF:</p>
+                                <FindrInput value={cpfInput} onChange={e => setCpfInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>E-mail:</p>
+                                <FindrInput value={emailInput} onChange={e => setEmailInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Telefone:</p>
+                                <FindrInput value={telefoneInput} onChange={e => setTelefoneInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Senha:</p>
+                                <FindrInput value={senhaInput} onChange={e => setSenhaInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Confirmar senha:</p>
+                                <FindrInput />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Nacionalidade</p>
+                                <FindrInput value={nacionalidadeInput} onChange={e => setNacionalidadeInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Estado:</p>
+                                <FindrInput value={estadoInput} onChange={e => setEstadoInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Cidade</p>
+                                <FindrInput value={cidadeInput} onChange={e => setCidadeInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Tempo disponível:</p>
+                                <FindrInput value={tempoInput} onChange={e => setTempoInput(e.target.value)} />
+                            </div>
+                            <div class="individual-input-cadastro">
+                                <p>Plano:</p>
+                                <FindrInput value={planoInput} onChange={e => setPlanoInput(e.target.value)} />
+                            </div>
+                            <br />
+                            <div className="text-acceptance">
+                                <h3 className='i-acceptance'> <input type="checkbox" id="checkbox-accept" /> Eu aceito os termos de uso</h3>
+                                <button type='submit'>Click Me</button>
+                                <h4 className='login-here'>Já tem conta? Faça o login <a href="#">aqui</a> </h4>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
