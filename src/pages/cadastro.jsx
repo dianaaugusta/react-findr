@@ -25,7 +25,7 @@ function Cadastro() {
             avaliableTime: tempoInput,
             fkPlanFreelancer: {
                 idPlan: planoInput,
-                planType: "",
+                planType:"",
                 quantityClicks: ""
             },
             name: nameInput,
@@ -38,10 +38,10 @@ function Cadastro() {
             state: estadoInput,
             city: cidadeInput
         }
-        console.log(cpfInput.value, emailInput.value)
 
         api.post("freelancer", objFreelancer).then(res => {
             alert("cadastrado com sucesso!");
+            console.log(objFreelancer)
         }).catch(erro => {
             alert("deu ruim!");
             console.log(objFreelancer)
@@ -57,51 +57,71 @@ function Cadastro() {
                     <div className="text-input">
                         <p>Crie sua conta de freelancer e encontre projetos de forma rápida e prática</p>
                     </div>
-                    <div className="container-inputs">
-                        <form onSubmit={postUser}>
+                        <div className="container-inputs">
+                    <form onSubmit={postUser}>
                             <div class="individual-input-cadastro">
                                 <p>Nome:</p>
-                                <FindrInput value={nameInput} onChange={e => setNameInput(e.target.value)} />
+                                <input type="text" value={nameInput} onChange={((event) => {
+                                    setNameInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>CPF:</p>
-                                <FindrInput value={cpfInput} onChange={e => setCpfInput(e.target.value)} />
+                                <input type="text" value={cpfInput} onChange={((event) => {
+                                    setCpfInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>E-mail:</p>
-                                <FindrInput value={emailInput} onChange={e => setEmailInput(e.target.value)} />
+                                <input type="text" value={emailInput} onChange={((event) => {
+                                    setEmailInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Telefone:</p>
-                                <FindrInput value={telefoneInput} onChange={e => setTelefoneInput(e.target.value)} />
+                                <input type="text" value={telefoneInput} onChange={((event) => {
+                                    setTelefoneInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Senha:</p>
-                                <FindrInput value={senhaInput} onChange={e => setSenhaInput(e.target.value)} />
+                                <input type="text" value={senhaInput} onChange={((event) => {
+                                    setSenhaInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Confirmar senha:</p>
-                                <FindrInput />
+                                <input type="text" />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Nacionalidade</p>
-                                <FindrInput value={nacionalidadeInput} onChange={e => setNacionalidadeInput(e.target.value)} />
+                                <input type="text" value={nacionalidadeInput} onChange={((event) => {
+                                    setNacionalidadeInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Estado:</p>
-                                <FindrInput value={estadoInput} onChange={e => setEstadoInput(e.target.value)} />
+                                <input type="text" value={estadoInput} onChange={((event) => {
+                                    setEstadoInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Cidade</p>
-                                <FindrInput value={cidadeInput} onChange={e => setCidadeInput(e.target.value)} />
+                                <input type="text" value={cidadeInput} onChange={((event) => {
+                                    setCidadeInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Tempo disponível:</p>
-                                <FindrInput value={tempoInput} onChange={e => setTempoInput(e.target.value)} />
+                                <input type="text" value={tempoInput} onChange={((event) => {
+                                    setTempoInput(event.target.value)
+                                })}/>
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Plano:</p>
-                                <FindrInput value={planoInput} onChange={e => setPlanoInput(e.target.value)} />
+                                <input type="text" value={planoInput} onChange={((event) => {
+                                    setPlanoInput(event.target.value)
+                                })}/>
                             </div>
                             <br />
                             <div className="text-acceptance">
@@ -109,8 +129,8 @@ function Cadastro() {
                                 <button type='submit'>Click Me</button>
                                 <h4 className='login-here'>Já tem conta? Faça o login <a href="#">aqui</a> </h4>
                             </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
                 </div>
             </div>
         </>
