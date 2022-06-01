@@ -20,13 +20,14 @@ function FindrLogin() {
     function autenticar(){
         let inputEmail = document.getElementById("input_id");
         let inputSenha = document.getElementById("input_senha")
-    
+        
         let user = new LoginRequest(inputEmail.value, inputSenha.value);
-    
+       
+        localStorage.setItem('user', loginInfo)
+        
         api.post("freelancer/login", user).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
-                localStorage.setItem('user', loginInfo)
                 navigate('/suporte')
             }
             else if(resposta.status === 404){
