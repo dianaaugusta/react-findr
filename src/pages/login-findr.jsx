@@ -9,25 +9,26 @@ import LoginRequest from "./models/LoginRequest";
 
 
 function FindrLogin() {
-    const[loginInfo, setLoginInfo] = useState('');
-    const[description, setDescription] = useState('');
-    const[password, setPassword] = useState('');
-    
-    const handleCallback = (childData) =>{
+    const [loginInfo, setLoginInfo] = useState('');
+    const [description, setDescription] = useState('');
+    const [password, setPassword] = useState('');
+    const loginPost = { email: description, password: password}
+
+    const handleCallback = (childData) => {
         setLoginInfo(childData)
     }
-    
-    
+
+
 
     const navigate = useNavigate()
-    
-    function autenticar(){
+
+    function autenticar() {
         api.post("freelancer/login", loginPost).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
                 navigate('/suporte')
             }
-            else if(resposta.status === 404){
+            else if (resposta.status === 404) {
                 alert("Usuario e/ou senha incorreto")
             }
         })
@@ -35,23 +36,24 @@ function FindrLogin() {
 
     return (
         <>
-        <div className="logo-findr">
-            <img src="https://i.imgur.com/DGkk638.png" alt="" className="logo" />
-        </div>
+            <div className="logo-findr">
+                <img src="https://i.imgur.com/DGkk638.png" alt="" className="logo" />
+            </div>
 
-        <div className="container-login-user">
-            <img src="https://i.imgur.com/6vXui7e.png" alt="" id="imgLogin"/>
+            <div className="container-login-user">
+                <img src="https://i.imgur.com/6vXui7e.png" alt="" id="imgLogin" />
                 <div className="saudacao-usuario">
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => {setDescription(evento.target.value)}}/>
-                    <input id="input_senha" placeholder="Senha" type="password" onInput={(evento) => {setPassword(evento.target.value)}}/>
+                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => { setDescription(evento.target.value) }} />
+                    <input id="input_senha" placeholder="Senha" type="password" onInput={(evento) => { setPassword(evento.target.value) }} />
                     <Button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</Button>
-                        <div className="password-options">
-                            <a href="#" className="a-href-password">Esqueceu a senha?</a>
-                            <a href="#" className="a-href-password">Recuperar Senha</a>
-                        </div>
+                    
+                    <div className="password-options">
+                        <a href="#" className="a-href-password">Esqueceu a senha?</a>
+                        <a href="#" className="a-href-password">Recuperar Senha</a>
+                    </div>
                     <p className="also-login">Também faça Login com:</p>
                     <div className="login-options">
                         <i className="pi pi-facebook"></i>

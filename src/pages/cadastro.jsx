@@ -46,7 +46,7 @@ function Cadastro() {
     
         api.post("freelancer", objFreelancer).then(res => {
             alert("cadastrado com sucesso!");
-            sessionStorage.setItem("user", nameUser);
+            sessionStorage.setItem("user", nameInput);
             window.location.href="/login";
         }).catch(erro => {
             alert("Erro no cadastro!");
