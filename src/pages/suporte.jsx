@@ -16,7 +16,6 @@ function Suporte() {
                 <div className="container-faq-imports">
                     <FaqComponent title="Perfil" primeiroLink="Como adicionar uma nova habilidade/projeto?" segundoLink="Como excluir um projeto ou uma habilidade?" terceiroLink="Como visualizar detalhes dos matchs que possuo?" /> 
                     <FaqComponent title="Match" primeiroLink="Como dar like ou recusar um usuário? " segundoLink="Como obter mais informações sobre um usuário?" terceiroLink="Como filtrar características dos usuários?" />
-                    <FaqComponent title="Duvidas petterson" primeiroLink="como ser o petterson" segundoLink="como tomar whey" terceiroLink="bbbbb"/>
                 </div>
             </div>
 

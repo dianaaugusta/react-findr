@@ -119,7 +119,7 @@ function Cadastro() {
                                 })} />
                             </div>
                             <div class="individual-input-cadastro">
-                                <p>Tempo disponível:</p>
+                                <p>Tempo disponível (em horas):</p>
                                 <input type="text" value={tempoInput} onChange={((event) => {
                                     setTempoInput(event.target.value)
                                 })} />
@@ -133,7 +133,7 @@ function Cadastro() {
                             <br />
                             <div className="text-acceptance">
                                 <h3 className='i-acceptance'> <input type="checkbox" id="checkbox-accept" /> Eu aceito os termos de uso</h3>
-                                <button type='submit'>Click Me</button>
+                                <button type='submit' id="signInButton">Cadastrar</button>
                                 <h4 className='login-here'>Já tem conta? Faça o login <a href="#">aqui</a> </h4>
                             </div>
                         </form>

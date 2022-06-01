@@ -22,7 +22,7 @@ function FindrMenu() {
         <div class="container-menu">
         <div class="user-return-container">
             <i class="pi pi-chevron-left icon-return"></i>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTigVlKpVHfeV-s3CdRHpA0nYIirGVIRLsjaw&usqp=CAU" alt="" />
+            <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" alt="" />
            <h1>{userAtivo}</h1>
         </div>
         <Menu model={items} className="menu-findr"/>

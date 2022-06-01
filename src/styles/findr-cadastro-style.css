@@ -92,3 +92,10 @@
     border-radius: 15px;
     border:1px solid black;
 }
+
+#signInButton{
+    border-radius: 8px;
+    box-shadow: none;
+    border: 1px solid black;
+    height: 4em;
+}
