@@ -9,13 +9,13 @@ import LoginRequest from "./models/LoginRequest";
 
 
 function FindrLogin() {
+    const[loginInfo, setLoginInfo] = useState('');
+    
+    const handleCallback = (childData) =>{
+        setLoginInfo(childData)
+    }
     
     const navigate = useNavigate()
-    
-    // const handleClick = () => {
-        
-    // }
-    
     
     function autenticar(){
         let inputEmail = document.getElementById("input_id");
@@ -26,10 +26,7 @@ function FindrLogin() {
         api.post("freelancer/login", user).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
-                var user = document.getElementById('input_id').value;
-                sessionStorage.setItem('user', JSON.stringify(user));
-                var obj = JSON.parse(sessionStorage.user);
-                alert(JSON.stringify(sessionStorage.getItem('user')));
+                localStorage.setItem('user', loginInfo)
                 navigate('/suporte')
             }
             else if(resposta.status === 404){
@@ -50,7 +47,7 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <FindrInput id="input_id" tooltip="Usuario"/>
+                    <FindrInput id="input_id" tooltip="Usuario" handleCallback={handleCallback}/>
                     <FindrInput id="input_senha" tooltip="Senha" type="password"/>
                     <Button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</Button>
                         <div className="password-options">
