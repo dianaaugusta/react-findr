@@ -19,7 +19,7 @@ function FindrLogin() {
     
     const loginPost = { 
         email: description, 
-        password: password, 
+        password: password 
     }
 
 
@@ -29,6 +29,7 @@ function FindrLogin() {
         api.post("freelancer/login", loginPost).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
+                sessionStorage.setItem("user", description)
                 navigate('/suporte')
             }
             else if(resposta.status === 404){
@@ -49,8 +50,8 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <FindrInput id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => {setDescription(evento.target.value)}}/>
-                    <FindrInput id="input_senha" placeholder="Senha" type="password" onInput={(evento) => {setPassword(evento.target.value)}}/>
+                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => {setDescription(evento.target.value)}}/>
+                    <input id="input_senha" placeholder="Senha" type="password" onInput={(evento) => {setPassword(evento.target.value)}}/>
                     <Button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</Button>
                         <div className="password-options">
                             <a href="#" className="a-href-password">Esqueceu a senha?</a>

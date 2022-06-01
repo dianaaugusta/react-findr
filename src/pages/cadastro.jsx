@@ -41,7 +41,7 @@ function Cadastro() {
 
         api.post("freelancer", objFreelancer).then(res => {
             alert("cadastrado com sucesso!");
-            window.location.href("/login");
+            window.location.href="/login";
         }).catch(erro => {
             alert("Erro no cadastro!");
             console.log(objFreelancer)
