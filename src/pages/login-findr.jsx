@@ -47,8 +47,8 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <FindrInput id="input_id" tooltip="Usuario" handleCallback={handleCallback}/>
-                    <FindrInput id="input_senha" tooltip="Senha" type="password"/>
+                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback}/>
+                    <input id="input_senha" placeholder="Senha" type="password"/>
                     <Button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</Button>
                         <div className="password-options">
                             <a href="#" className="a-href-password">Esqueceu a senha?</a>
