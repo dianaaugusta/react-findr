@@ -39,8 +39,14 @@ function Cadastro() {
             city: cidadeInput
         }
 
+        const loginPost = { 
+            nameUser: nameInput, 
+            password: senhaInput 
+        }
+    
         api.post("freelancer", objFreelancer).then(res => {
             alert("cadastrado com sucesso!");
+            sessionStorage.setItem("user", nameUser);
             window.location.href="/login";
         }).catch(erro => {
             alert("Erro no cadastro!");

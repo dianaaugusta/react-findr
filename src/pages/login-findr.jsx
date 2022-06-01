@@ -17,11 +17,7 @@ function FindrLogin() {
         setLoginInfo(childData)
     }
     
-    const loginPost = { 
-        email: description, 
-        password: password 
-    }
-
+    
 
     const navigate = useNavigate()
     
@@ -29,7 +25,6 @@ function FindrLogin() {
         api.post("freelancer/login", loginPost).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
-                sessionStorage.setItem("user", description)
                 navigate('/suporte')
             }
             else if(resposta.status === 404){
