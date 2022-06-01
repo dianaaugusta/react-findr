@@ -10,22 +10,23 @@ import LoginRequest from "./models/LoginRequest";
 
 function FindrLogin() {
     const[loginInfo, setLoginInfo] = useState('');
+    const[description, setDescription] = useState('');
+    const[password, setPassword] = useState('');
     
     const handleCallback = (childData) =>{
         setLoginInfo(childData)
     }
     
+    const loginPost = { 
+        email: description, 
+        password: password, 
+    }
+
+
     const navigate = useNavigate()
     
     function autenticar(){
-        let inputEmail = document.getElementById("input_id");
-        let inputSenha = document.getElementById("input_senha")
-        
-        let user = new LoginRequest(inputEmail.value, inputSenha.value);
-       
-        localStorage.setItem('user', loginInfo)
-        
-        api.post("freelancer/login", user).then((resposta) => {
+        api.post("freelancer/login", loginPost).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
                 navigate('/suporte')
@@ -48,8 +49,8 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos mehores produtos e análises</h3>
-                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback}/>
-                    <input id="input_senha" placeholder="Senha" type="password"/>
+                    <FindrInput id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => {setDescription(evento.target.value)}}/>
+                    <FindrInput id="input_senha" placeholder="Senha" type="password" onInput={(evento) => {setPassword(evento.target.value)}}/>
                     <Button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</Button>
                         <div className="password-options">
                             <a href="#" className="a-href-password">Esqueceu a senha?</a>

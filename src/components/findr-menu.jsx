@@ -6,7 +6,7 @@ import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";  
 
 function FindrMenu() {
-    const userAtivo = window.localStorage.getItem('user');
+    const userAtivo = sessionStorage.getItem("email");
 
     let items = [
         {label: 'Perfil', icon: 'pi pi-fw pi-user', url: ''},
