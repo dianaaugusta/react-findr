@@ -46,9 +46,11 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos melhores produtos e análises</h3>
-                    <FindrInput id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => { setDescription(evento.target.value) }} />
-                    <FindrInput id="input_senha" placeholder="Senha" type="password" onInput={(evento) => { setPassword(evento.target.value) }} />
-                    <Button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</Button>
+                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => { setDescription(evento.target.value) }} />
+                    <br />
+                    <input id="input_senha" placeholder="Senha" type="password" onInput={(evento) => { setPassword(evento.target.value) }} />
+                    <br />
+                    <button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</button>
                     
                     <div className="password-options">
                         <a href="#" className="a-href-password">Esqueceu a senha?</a>

@@ -28,6 +28,19 @@ body{
     align-items: stretch;
 }
 
+#input_id ,#input_senha{
+    border-radius: 15px;
+    height: 50px;
+    border:1px solid black; 
+}
+
+#btn-click-login{
+    border:1px solid black;
+    border-radius: 15px;
+    height: 40px;   
+    color: white;
+}
+
 .saudacao-usuario .p-inputtext.p-component{
     width: 80%;
     height: 5em;

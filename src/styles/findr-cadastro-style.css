@@ -29,7 +29,8 @@
 
 .container-inputs input{
     width: 19em;
-    height: 2em;
+    height: 2.5em;
+    background-color: #EDF2F5;
 }
 
 .text-input{
@@ -73,7 +74,12 @@
     margin-top: 0.5em;
     margin-right: 1em;
 }
-
+#signInButton{
+    background-color: #6C63FF;
+    color: white;
+    font-size: 13px;
+    width: 30%;
+}
 .i-acceptance{
     display: inline-flex;
 }
