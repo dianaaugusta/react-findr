@@ -29,6 +29,7 @@ function FindrLogin() {
                 navigate('/suporte')
             }
             else if (resposta.status === 404) {
+                console.log("usuario incorreto!")
                 alert("Usuario e/ou senha incorreto")
             }
         })
