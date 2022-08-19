@@ -27,42 +27,35 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+let items = [
+  {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Amagi_class_battlecruiser_sketch.svg/335px-Amagi_class_battlecruiser_sketch.svg.png"
+  },
+  {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Yokosuka_Naval_Arsenal_after_Great_Kanto_earthquake_of_1923.jpg/240px-Yokosuka_Naval_Arsenal_after_Great_Kanto_earthquake_of_1923.jpg"
+  }
+]
+
+let position = 0
+let currentPerson = items[position];
+
 export default function FindrBox(props) {
   const [expanded, setExpanded] = React.useState(false);
-  const [open, setOpen] = React.useState(true);
-  const [imageGrande, setImageGrande] = ""
   const [userLiked, setUserLiked] = React.useState(false);
 
-  var breno=0;
-  const items = [
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Amagi_class_battlecruiser_sketch.svg/335px-Amagi_class_battlecruiser_sketch.svg.png"
-    },
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Yokosuka_Naval_Arsenal_after_Great_Kanto_earthquake_of_1923.jpg/240px-Yokosuka_Naval_Arsenal_after_Great_Kanto_earthquake_of_1923.jpg"
-    }
-  ]
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const handleChangeImage = () => {
-    console.log("change image");
-    setImageGrande(items[breno++])
-  }
-
-  const handleFavoriteClick = () => {    
-    console.log("enteei aq")
-    setUserLiked(true);
-    if(setUserLiked) {
-      this.handleChangeImage()
-    }
+  const handleFavoriteClick = () => {   
+    console.log("cheguei aqui") 
+    currentPerson = items[position+ 1];
   };
 
 
-  return (
-
+  return (<>
     <Card sx={{ maxWidth: 1000 }}>
       <CardHeader
         avatar={
@@ -81,7 +74,7 @@ export default function FindrBox(props) {
        <CardMedia
         component="img"
         height="300"
-        image = {handleChangeImage}
+        image = {currentPerson.img}
         alt="Paella dish"
       />
 
@@ -112,9 +105,8 @@ export default function FindrBox(props) {
         image={props.iconAbilityThree}
         alt="Paella dish"
       />
-        <IconButton aria-label="Favoritar" 
-          onClick={handleFavoriteClick}>
-          <FavoriteIcon />
+        <IconButton aria-label="Favoritar" onClick={handleFavoriteClick} >
+          <FavoriteIcon/>
         </IconButton>
 
         <ExpandMore
@@ -134,5 +126,6 @@ export default function FindrBox(props) {
         </CardContent>
       </Collapse>
     </Card>
+  </>
   );
 }
