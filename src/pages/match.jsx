@@ -9,11 +9,7 @@ function FindrMatch() {
         <>
             <FindrMenu/>
             <div class="card-match">
-                   <FindrBox title="Teste" imgLink="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Leo_Stronda_Solo_WBFF.jpg/220px-Leo_Stronda_Solo_WBFF.jpg"
-                   text="ALGUEM ME MATA" paragraph="HABILIDADES: JAVA, VSCODE"
-                   iconAbilityOne="https://cdn-icons-png.flaticon.com/512/226/226777.png" 
-                   iconAbilityTwo="https://cdn-icons-png.flaticon.com/512/226/226777.png" 
-                   iconAbilityThree="https://cdn-icons-png.flaticon.com/512/226/226777.png"/>
+                   <FindrBox/>
             </div>
 
         </>
