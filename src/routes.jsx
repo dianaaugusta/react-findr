@@ -3,6 +3,7 @@ import FindrLogin from "./pages/login-findr";
 import Suporte from "./pages/suporte";
 import Cadastro from "./pages/cadastro";
 import FindrMatch from "./pages/match"
+import Perfil from "./pages/perfil";
 
 
 function Rotas(){
@@ -13,6 +14,7 @@ function Rotas(){
                 <Route path="/suporte" element={<Suporte/>}/>
                 <Route path="/cadastro" element={<Cadastro/>}/>
                 <Route path="/main" element={<FindrMatch/>}/>
+                <Route path="/perfil" element={<Perfil/>}/>
             </Routes>
         </BrowserRouter>
     );
