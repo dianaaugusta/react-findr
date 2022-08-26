@@ -19,14 +19,36 @@
     display: flex;
     margin-top: 10px;
     text-align: center;
+
     height: 300px;
     justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+.enfeite1{
+    display: flex;
+    background-image: none;
+    align-items: flex-start;
+}
+
+.enfeite1 img{
+    height: 150px;
+    width: 120px;
+}
+
+.enfeite2{
+    display: flex;
+    background-image: none;
+    align-items: flex-end;
+}
+
+.enfeite2 img{
+    height: 150px;
+    width: 120px;
 }
 
 .img-freelancer{
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-    width: 600px;
     height: 310px;
     display: flex;
     align-items: center;
@@ -57,18 +79,62 @@
     margin: 20px;
     justify-content: center;
     margin-bottom: 0;
+    flex-direction: column;
 }
 
-.certificacoes img{
+.certificacoes-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 15%;
+}
+
+
+.certificacoes-titulo h1{
+    width: 63%;
+}
+
+.certificacoes-titulo h1{
+    display: flex;
+    text-align: center;
+}
+
+.certificacoes-titulo img{
     margin-top: 13px;
     width: 50px;
     height: 50px;
 }
 
+.certificado-info{
+    display: flex;
+    align-items: center;
+}
+
+.certificado-info img{
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+}
+
+.certificado-info-mais{
+    display: flex;
+    flex-direction: column;
+}
+
+.certificado-info-mais h3, p{
+    margin: 0;
+}
+
+
+
+/*Fim certificacoes */
+/* Match inicio*/
 .matchs{
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     background-color: white;
     border-radius: 30px;
     height: 300px;
