@@ -1,0 +1,102 @@
+
+@keyframes loadMenu{
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+  }
+
+  @keyframes likeAnimation{
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(200%);
+    }
+  }
+
+  @keyframes rejectAnimation{
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+  }
+  
+  
+
+body{
+    animation: loadMenu 1s right;
+    background-color: lightgrey;
+}
+.MuiCard-root{
+    animation: loadMenu 1s right;
+}
+.user-paragraph{
+    font-size: 30px;
+    text-align: center;
+}
+
+.header{
+    animation: loadMenu 1s right;
+    background-image: url('https://i.imgur.com/9y9tv95.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding: 5%;
+    font-size: 50px;
+}
+
+
+.avatar-user{
+    background-color: red;
+    border-radius: 80px;
+    height: 10vh;
+    width: 10vh;
+    padding-bottom: 0;
+}
+
+#favorite-button-icon:hover{
+    color:red;
+    font-size: 60px;
+    transition: 0.7s;
+}
+
+#not-interested-icon:hover{
+    color: darkblue;
+    font-size: 60px;
+    transition: 0.7s;
+}
+
+.MuiCardHeader-title.css-et1ao3-MuiTypography-root{
+    font-size: 50px;
+    padding-left: 50%;
+    padding-right: 10%;
+    color: black;
+}
+
+.MuiCardMedia-img{
+  opacity: 0.8;
+  fill: aqua;
+}
+
+
+.MuiCardMedia-img:hover{
+    opacity: 1;
+    fill: aqua;
+  }
+
+
+  .run-reject-animation {
+    animation: rejectAnimation 0.5s; 
+  }
+
+  .run-like-animation {
+    animation: likeAnimation 0.6s; 
+  }
