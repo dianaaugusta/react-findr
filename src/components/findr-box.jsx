@@ -153,62 +153,77 @@ export default function FindrBox(props) {
           </IconButton>
         }
         title={name}
-        subheader={props.subheader}
+        subheader="Profissão atual: Desenvolvedor Back-end na ALPE"
       />
-      <CardMedia
-        component="img"
-        height="300"
-        image={image}
-        alt="Paella dish"
-      />
+     
 
-      <CardContent>
-        <Typography variant="body2" color="text.secondary" class="user-paragraph">
-          Principais linguagens:
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="Recusar" onClick={(event) => handleRejectClick(event, 'hello')}>
-          <CloseIcon id="not-interested-icon" />
-        </IconButton>
-        <CardMedia
+      <CardContent id="teste-column">
+      <CardMedia
           component="img"
           height="100"
           image={firstSkill}
-          alt="Paella dish"
+          alt="Primeira habilidade"
+          class="language-card"
+          sx={{
+            borderRadius: 80,
+            gap: 10,
+            width: 1/3,
+            border: 4
+          }}
         />
+        <Typography variant="h1" color="text.secondary" class="user-paragraph" id="main-ability">
+         Principal Linguagem
+        </Typography>
         <CardMedia
           component="img"
           height="100"
           image={secondSkill}
-          alt="Paella dish"
+          alt="Segunda habilidade"
+          class="language-card"
+          sx={{
+            borderRadius: 80,
+            gap: 10,
+            width: 1/3,
+            border: 4
+          }}
         />
+         <Typography variant="h2" color="text.secondary" class="user-paragraph"  id="secondary-ability">
+         Média proficiência
+        </Typography>
+        
         <CardMedia
           component="img"
           height="100"
           image={thirdSkill}
-          alt="Paella dish"
+          alt="Terceira habilidade"
+          class="language-card"
+          sx={{
+            borderRadius: 80,
+            gap: 10,
+            width: 1/3,
+            border: 4
+          }}
         />
+        
+        <Typography variant="h3" color="text.secondary" class="user-paragraph"  id="tertiary-ability">
+         "Sei me virar..."
+        </Typography>
+      </CardContent>
+      <CardActions id="card-actions">
+        <IconButton aria-label="Recusar" onClick={(event) => handleRejectClick(event, 'hello')}>
+          <CloseIcon id="not-interested-icon" />
+        </IconButton>
         <IconButton aria-label="Favoritar" onClick={(event) => handleFavoriteClick(event, 'hello')}>
           <FavoriteIcon id="favorite-button-icon" />
         </IconButton>
 
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>
-            {userParagraph}
-          </Typography>
-        </CardContent>
-      </Collapse>
+      <Typography variant="h3" id="final-availability-title">
+       Disponibilidade:
+      </Typography>
+      <Typography variant="h4" id="final-availability-title">
+       4 horas na semana
+      </Typography>
     </Card>
   </>
   );
