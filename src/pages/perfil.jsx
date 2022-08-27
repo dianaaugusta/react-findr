@@ -3,9 +3,12 @@ import * as React from 'react';
 import Efect1 from "../imgs/efects1.png"
 import Efect2 from "../imgs/efects2.png"
 import "../styles/findr-perfil-free-style.css"
-
+import api from "../api";
 
 function Perfil() {
+    const userAtivo = sessionStorage.getItem("user");
+
+
     return (
         <div class="screen-perfil">
             <FindrMenu />
@@ -18,7 +21,7 @@ function Perfil() {
                     </div>
                     <div class="img-freelancer">
                         <img src="https://cdn.icon-icons.com/icons2/510/PNG/512/person_icon-icons.com_50075.png" alt="" />
-                        <h3>NOME FREELANCER</h3>
+                        <h3>{userAtivo}</h3>
                         <p>INFOR DO DEV (ICONE DO GITHUB DO DEV)NOME DO GIT </p>
                         <p>localização do dev (img da localização)</p>
                     </div>
@@ -31,7 +34,7 @@ function Perfil() {
                     <div class="certificacoes">
                         <div class="certificacoes-titulo">
                             <h1>Certificações</h1>
-                            <img src="https://cdn.icon-icons.com/icons2/510/PNG/512/person_icon-icons.com_50075.png" alt="" />
+                            <img src="https://img.icons8.com/ios/452/edit--v2.png" alt="" />
                         </div>
                         <div class="certificado-info">
                             <img src={Efect1} />
@@ -61,12 +64,48 @@ function Perfil() {
                     <div class="matchs">
                         <h1>Matchs</h1>
                         <div class="grid-container">
-                            <div class="grid-item">1</div>
-                            <div class="grid-item">2</div>
-                            <div class="grid-item">3</div>
-                            <div class="grid-item">4</div>
-                            <div class="grid-item">5</div>
-                            <div class="grid-item">6</div>
+                            <div class="grid-item">
+                                <div class="match-info-pessoa">
+                                    <img src={Efect1} />
+                                    <h3>Nome</h3>
+                                    <p>Área</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="match-info-pessoa">
+                                    <img src={Efect1} />
+                                    <h3>Nome</h3>
+                                    <p>Área</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="match-info-pessoa">
+                                    <img src={Efect1} />
+                                    <h3>Nome</h3>
+                                    <p>Área</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="match-info-pessoa">
+                                    <img src={Efect1} />
+                                    <h3>Nome</h3>
+                                    <p>Área</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="match-info-pessoa">
+                                    <img src={Efect1} />
+                                    <h3>Nome</h3>
+                                    <p>Área</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="match-info-pessoa">
+                                    <img src={Efect1} />
+                                    <h3>Nome</h3>
+                                    <p>Área</p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

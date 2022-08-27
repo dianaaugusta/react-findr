@@ -26,7 +26,7 @@ function FindrLogin() {
         api.post("freelancer/login", loginPost).then((resposta) => {
             console.log(resposta)
             if (resposta.status === 200) {
-                navigate('/suporte')
+                navigate('/perfil')
             }
             else if (resposta.status === 404) {
                 console.log("usuario incorreto!")
