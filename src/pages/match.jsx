@@ -5,6 +5,10 @@ import '../styles/findr-match-style.css'
 import FindrBox from "../components/findr-box"
 import Fade from '@mui/material/Fade';
 function FindrMatch() {
+    const userAtivo = sessionStorage.getItem("user");
+    console.log("user")
+    console.log(userAtivo)
+    
     return (
         <>
             <FindrMenu/>

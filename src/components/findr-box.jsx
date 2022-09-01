@@ -18,6 +18,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import '../styles/findr-box-style.css'
 import { Icon } from '@mui/material';
 import Fade from '@mui/material/Fade';
+import footerImage from '../imgs/efects2.png'
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -140,18 +142,14 @@ export default function FindrBox(props) {
 
 
   return (<>
-    <Card id="full-card" sx={{ maxWidth: 1000 }}>
+    <Card id="full-card" sx={{ maxWidth: 700, minWidth: 500 , borderRadius: 4 }}>
       <CardHeader class="header" sx={{ p: 0 }}
         avatar={<>
           <Avatar aria-label="recipe" class="avatar-user">
           </Avatar>
         </>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+        
         title={name}
         subheader="Profissão atual: Desenvolvedor Back-end na ALPE"
       />
@@ -165,13 +163,11 @@ export default function FindrBox(props) {
           alt="Primeira habilidade"
           class="language-card"
           sx={{
-            borderRadius: 80,
-            gap: 10,
-            width: 1/3,
-            border: 4
+            borderRadius: 85,
+            width: 1/3
           }}
         />
-        <Typography variant="h1" color="text.secondary" class="user-paragraph" id="main-ability">
+        <Typography variant="h4" color="text.secondary" class="user-paragraph" id="main-ability">
          Principal Linguagem
         </Typography>
         <CardMedia
@@ -181,13 +177,11 @@ export default function FindrBox(props) {
           alt="Segunda habilidade"
           class="language-card"
           sx={{
-            borderRadius: 80,
-            gap: 10,
-            width: 1/3,
-            border: 4
+            borderRadius: 85,
+            width: 1/3
           }}
         />
-         <Typography variant="h2" color="text.secondary" class="user-paragraph"  id="secondary-ability">
+         <Typography variant="h4" color="text.secondary" class="user-paragraph"  id="secondary-ability">
          Média proficiência
         </Typography>
         
@@ -198,14 +192,12 @@ export default function FindrBox(props) {
           alt="Terceira habilidade"
           class="language-card"
           sx={{
-            borderRadius: 80,
-            gap: 10,
-            width: 1/3,
-            border: 4
+            borderRadius: 85,
+            width: 1/3
           }}
         />
         
-        <Typography variant="h3" color="text.secondary" class="user-paragraph"  id="tertiary-ability">
+        <Typography variant="h3" color="text.secondary" class="user-paragraph" id="tertiary-ability">
          "Sei me virar..."
         </Typography>
       </CardContent>
@@ -218,12 +210,22 @@ export default function FindrBox(props) {
         </IconButton>
 
       </CardActions>
-      <Typography variant="h3" id="final-availability-title">
+      <Typography variant="h4" id="final-availability-title">
        Disponibilidade:
       </Typography>
       <Typography variant="h4" id="final-availability-title">
        4 horas na semana
       </Typography>
+      <Card id="footer">
+        <CardMedia id="footer-image"
+          component="img"
+          height="100"
+         image={footerImage}
+         sx={{
+          padding: 0
+        }}>
+        </CardMedia>
+      </Card>
     </Card>
   </>
   );
