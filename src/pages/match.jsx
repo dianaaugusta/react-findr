@@ -23,6 +23,9 @@ function FindrMatch() {
     })
   }, [])
 
+
+
+
   function awaitMatchUser(fkFreelancer){
     api.post("/match/freelancer/" + {fkFreelancer}).then(res => {
       if (res.status === 200) {
@@ -46,7 +49,7 @@ function FindrMatch() {
         navButtonsAlwaysVisible={true}
         next={() => {
           // api.post("/freelancer/", { idFreelancer }, "/1/true").then(res => {
-          api.post("/freelancer/2/1/true").then(res => {
+          api.post("like/freelancer/2/1/true").then(res => {
             alert("Like enviado com sucesso!");
             awaitMatchUser(2)
           }).catch(erro => {
@@ -62,6 +65,9 @@ function FindrMatch() {
           userList.map(u => (
             <FindrBox
               title={u.name}
+              firstSkill = ""
+              secondSkill = ""
+              thirdSkill = ""
               idUserFreelancer={u.idUserFreelancer}
               avaliableTime={u.avaliableTime}
             />

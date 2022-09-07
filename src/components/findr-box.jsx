@@ -54,6 +54,7 @@ export default function FindrBox(props) {
   const [userMatch, setUserMatch] = React.useState(false);
 
   const [userList, setUserList] = useState([]);
+  const [userSkills, setUserSkills] = useState([]);
   const[nameList, setNameList] = useState([]);
 
   
@@ -109,6 +110,14 @@ export default function FindrBox(props) {
     setExpanded(!expanded);
   };
 
+  useEffect(() => {
+    api.get("/specialty/freelancer/"+idFreelancer).then((res) => {
+      setUserList(res.data);
+    }).catch((err) => {
+      console.log(err);
+    })
+  }, [])
+
 
   return (<>
   {localStorage.setItem('idFreelancer', idFreelancer)}
@@ -129,7 +138,7 @@ export default function FindrBox(props) {
       <CardMedia
           component="img"
           height="100"
-          image={firstSkill}
+          image={props.firstSkill}
           alt="Primeira habilidade"
           class="language-card"
           sx={{
@@ -143,7 +152,7 @@ export default function FindrBox(props) {
         <CardMedia
           component="img"
           height="100"
-          image={secondSkill}
+          image={props.secondSkill}
           alt="Segunda habilidade"
           class="language-card"
           sx={{
@@ -158,7 +167,7 @@ export default function FindrBox(props) {
         <CardMedia
           component="img"
           height="100"
-          image={thirdSkill}
+          image={props.thirdSkill}
           alt="Terceira habilidade"
           class="language-card"
           sx={{
