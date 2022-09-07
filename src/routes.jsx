@@ -4,7 +4,8 @@ import Suporte from "./pages/suporte";
 import Cadastro from "./pages/cadastro";
 import FindrMatch from "./pages/match"
 import Perfil from "./pages/perfil";
-
+import HabilitsProject from "./pages/habilits-project"
+import HabilitsHabilit from "./pages/habilits-habilit"
 
 function Rotas(){
     return(
@@ -15,6 +16,8 @@ function Rotas(){
                 <Route path="/cadastro" element={<Cadastro/>}/>
                 <Route path="/main" element={<FindrMatch/>}/>
                 <Route path="/perfil" element={<Perfil/>}/>
+                <Route path="/habilits/project" element={<HabilitsProject/>}/>
+                <Route path="/habilits/habilit" element={<HabilitsHabilit/>}></Route>
             </Routes>
         </BrowserRouter>
     );

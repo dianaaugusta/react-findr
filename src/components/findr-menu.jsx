@@ -10,18 +10,17 @@ function FindrMenu() {
 
     let items = [
         {label: 'Perfil', icon: 'pi pi-fw pi-user', url: ''},
-        {label: 'Conexões', icon: 'pi pi-fw pi-sitemap',  url: ''},
         {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: ''},
-        {label: 'Notícias', icon: 'pi pi-fw pi-globe',  url: ''},
-        {label: 'Freeduca', icon: 'pi pi-fw pi-pencil',  url: ''},
-        {label: 'Suporte', icon: 'pi pi-fw pi-question-circle',  url: ''}
+        {label: 'Conexões', icon: 'pi pi-fw pi-sitemap',  url: ''},
+        {label: 'Matchs', icon: 'pi pi-fw pi-users',  url: ''},
+        {label: 'Projetos', icon: 'pi pi-fw pi-id-card',  url: ''},
+        {label: 'Sair', icon: 'pi pi-fw pi-sign-out',  url: ''}
     ]
 
     return (
         <>
         <div class="container-menu">
         <div class="user-return-container">
-            <i class="pi pi-chevron-left icon-return"></i>
             <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" alt="" />
            <h1>{userAtivo}</h1>
         </div>

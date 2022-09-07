@@ -14,16 +14,14 @@
     animation: loadMenu 0.5s;
     height: 100vh;
     float: left;
-    border-right: 1px solid black;
-    
 }
 
 
 .user-return-container{
     margin-top: 1em;
     padding-bottom: 1em;
-    display: inline-flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -39,8 +37,8 @@
 }
 
 .user-return-container img{
-    width: 3em;
-    height: 3em;
+    width: 5em;
+    height: 5em;
     border-radius: 50%;
     border: 1px solid black;
     background-size: initial;
@@ -55,16 +53,24 @@
 
 
 .p-menu .p-menuitem-link:not(.p-disabled):hover{
-    background-color: purple;
+    background-color: #8a2be270;
+    box-shadow: 6px 5px 10px 0px #9cacb4;
 }
 
 .pi:before{
-    color: black;
+    color: #495057 !important;
 }
-
 
 .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text{
     color: white;
+}
+
+.p-menu .p-menuitem-link .p-menuitem-icon{
+    margin-right: 1.5em;
+}
+
+.p-menu .p-menuitem-link .p-menuitem-icon:hover{
+    color: white !important;
 }
 
 .icon-return i{

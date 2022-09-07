@@ -1,4 +1,3 @@
-
 import FindrInput from "../components/findr-input";
 import '../styles/findr-login-page-style.css';
 import React, { useState } from "react";
