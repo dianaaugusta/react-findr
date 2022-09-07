@@ -54,7 +54,7 @@ function Perfil() {
                     <div class="certificacoes">
                         <div class="certificacoes-titulo">
                             <h1>Certificações</h1>
-                            <img src="https://img.icons8.com/ios/452/edit--v2.png" alt="" />
+
                         </div>
                         <div class="certificado-info">
                             <img src="https://apexensino.com.br/wp-content/uploads/2020/05/26-java-logo.jpg" alt="" />
@@ -84,7 +84,7 @@ function Perfil() {
                     <div className="matchs">
                         <div className="container">
                             <h1>Matchs</h1>
-                            <div className="grid-container">                               
+                            <div className="grid-container">
                                 {matchs.map((item) => <CardMatch name={item.name} nameProject={item.nameProject} />)}
                             </div>
                         </div>

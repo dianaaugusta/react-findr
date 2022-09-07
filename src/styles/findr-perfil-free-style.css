@@ -25,19 +25,18 @@
     display: flex;
     background-color: white;
     border-radius: 30px;
-    height: 300px;
-    width: 500px;
+    height: 285px;
+    width: 400px;
     margin: 20px;
     justify-content: center;
     margin-bottom: 0;
     flex-direction: column;
-    overflow: auto;
 }
 
 .certificacoes-titulo {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
     height: 15%;
     color: rgb(108, 99, 255);
@@ -45,7 +44,6 @@
 
 
 .certificacoes-titulo h1{
-    width: 56%;
     font-size: 23px;
 }
 
@@ -54,22 +52,15 @@
     text-align: center;
 }
 
-.certificacoes-titulo img{
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-}
-
 .certificado-info{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
 }
 
 .certificado-info img{
     height: 80px;
     width: 80px;
-    padding: 10px;
+    padding: 18px;
     margin-bottom: 0;
 }
 
@@ -95,8 +86,8 @@
     align-items: center;
     background-color: white;
     border-radius: 30px;
-    height: 300px;
-    width: 500px;
+    height: 285px;
+    width: 600px;
     margin: 20px;
     margin-bottom: 0;
     overflow: auto;
