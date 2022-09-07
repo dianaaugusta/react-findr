@@ -8,10 +8,9 @@ import LoginRequest from "./models/LoginRequest";
 
 
 function FindrLogin() {
-    const [loginInfo, setLoginInfo] = useState('');
-    const [description, setDescription] = useState('');
+    const [emailUser, setEmailUser] = useState('');
     const [password, setPassword] = useState('');
-    const loginPost = { email: description, password: password}
+    const loginPost = { email: emailUser, password: password}
 
 
 
@@ -54,7 +53,7 @@ function FindrLogin() {
                     <h1>Login</h1>
                     <h3 className="text-greetings">Venha conectar-se em sua conta e venha usufruir de
                         nossos melhores produtos e análises</h3>
-                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => { setDescription(evento.target.value) }} />
+                    <input id="input_id" placeholder="Usuario" handleCallback={handleCallback} onInput={(evento) => { setEmailUser(evento.target.value) }} />
                     <br />
                     <input id="input_senha" placeholder="Senha" type="password" onInput={(evento) => { setPassword(evento.target.value) }} />
                     <br />
