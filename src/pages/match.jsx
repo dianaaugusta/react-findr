@@ -49,7 +49,7 @@ function FindrMatch() {
         navButtonsAlwaysVisible={true}
         next={() => {
           // api.post("/freelancer/", { idFreelancer }, "/1/true").then(res => {
-          api.post("like/freelancer/2/1/true").then(res => {
+          api.post("like/freelancer/1/1/true").then(res => {
             alert("Like enviado com sucesso!");
             awaitMatchUser(2)
           }).catch(erro => {
