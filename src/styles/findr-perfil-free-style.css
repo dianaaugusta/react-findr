@@ -15,76 +15,6 @@
     flex-direction: column;
 }
 
-.card-perfil{
-    display: flex;
-    margin-top: 10px;
-    text-align: center;
-    height: 300px;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-}
-.card-perfil-info{
-    display: flex;
-    width:380px;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.card-info-dev-perfil p, img{
-    margin: 5px;
-    display: flex;
-}
-
-.card-info-dev-perfil img{
-    margin-top: 0;
-    margin-bottom: 0;
-    height: 20px;
-    width: 20px;
-}
-
-.enfeite1{
-    display: flex;
-    background-image: none;
-    align-items: flex-start;
-    
-}
-
-.enfeite1 img{
-    height: 150px;
-    width: 120px;
-    border-radius: 10px;
-}
-
-.enfeite2{
-    display: flex;
-    background-image: none;
-    align-items: flex-end;
-}
-
-.enfeite2 img{
-    height: 150px;
-    width: 120px;
-    border-radius: 10px;
-}
-
-.img-freelancer-perfil{
-    height: 310px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.img-freelancer-perfil img{
-    background-color: aliceblue;
-    border-radius: 50%;
-    display: flex;
-    height: 150px;
-    width: 150px;
-}
-
 .screen3{
     display: flex;
     justify-content: space-between;
@@ -157,3 +87,29 @@
 
 /*Fim certificacoes */
 /* Match inicio*/
+
+  .matchs{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    height: 300px;
+    width: 500px;
+    margin: 20px;
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+.matchs h1{
+    margin-top: 0;
+    color: rgb(108, 99, 255);
+    font-size: 23px;
+    margin-bottom: 30px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
