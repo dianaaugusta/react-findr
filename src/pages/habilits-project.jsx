@@ -11,34 +11,8 @@ function HabilitsProject() {
     const [habiitProjectInput, setHabilitProjectInput] = useState("");
     const [requiredAreaInput, setRequiredAreaInput] = useState("");
     const [quantifyProfissionalsInput, setQuantifyProfissionalsInput] = useState("")
-    const [iniciante, setIniciante] = useState(true);
-    const [intermediario, setIntermediario] = useState(true);
-    const [avancado, setAvancado] = useState(true);
+    const [levelKnowledgeInput, setlevelKnowledgeInput] = useState()
 
-
-    const [levelKnowledgeInput, setlevelKnowledgeInput] = useState("")
-
-    const handleChange=(data)=>{
-        if(data=="iniciante"){
-            if(iniciante==true){
-                console.log(data, "our value")
-            }
-            setIniciante(!iniciante)
-        }
-        if(data=="intermediario"){
-            if(intermediario==true){
-                console.log(data, "out value")
-            }
-            setIntermediario(!intermediario)
-        }
-
-        if(data=="avancado"){
-            if(avancado==true){
-                console.log(data, "our value")
-            }
-            setAvancado(!avancado)
-        }
-    }
 
 
     function postProjectContratante(e) {
@@ -46,6 +20,8 @@ function HabilitsProject() {
         const userAtivo = sessionStorage.getItem("user");
         window.sessionStorage.setItem("user", userAtivo);
         e.preventDefault();
+
+        
         
         const objProject = {
             nameProject: nameProjectInput,
@@ -54,15 +30,16 @@ function HabilitsProject() {
             requiredLanguages: habiitProjectInput,
             levelKnowledge: levelKnowledgeInput,
             quantifyProfissionals: quantifyProfissionalsInput,
-            image: "",
             contactor: {
-                idContactor: "",
+                idContactor: idContactor,
             }  
         }
 
         api.post("project", objProject).then(res =>{
             alert("cadastrado com sucesso!");
-            // sessionStorage.setItem("user", idContactor)
+            api.get('/contactor').then((resposta=>{
+                sessionStorage.idContactor = resposta.data.idContactor
+            }))
         }).catch(erro => {
             alert("Erro no cadastro!");
             console.log(objProject)
@@ -140,17 +117,17 @@ function HabilitsProject() {
                                 <div class="title">NÍVEL DE HABILIDADE</div>
                                 <div class="types-levels">
                                     <div class="level-beginner">
-                                        <input type="radio" value={iniciante} onChange={()=>handleChange("iniciante")}/>
+                                        <input type="radio" name="levelKnowledgeInput" value="Iniciante" onChange={e=>setlevelKnowledgeInput(e.target.value)}/>
                                         <p>Iniciante</p>
                                     </div>
 
                                     <div class="level-intermediary">
-                                        <input type="radio" value={intermediario} onChange={()=>handleChange("intermediario") }/>
+                                        <input type="radio" name="levelKnowledgeInput" value="Intermediário" onChange={e=>setlevelKnowledgeInput(e.target.value)}/>
                                         <p>Intermediário</p>
                                     </div>
 
                                     <div class="level-advanced">
-                                        <input type="radio" value={avancado} onChange={()=>handleChange("avancado")}/>
+                                        <input type="radio" name="levelKnowledgeInput" value="Avançado" onChange={e=>setlevelKnowledgeInput(e.target.value)}/>
                                         <p>Avançado</p>
                                     </div>
                                 </div>
