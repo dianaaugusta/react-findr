@@ -186,6 +186,8 @@ body{
 }
 
 #full-card{
+  margin-left: 10em;
+  overflow-y: scroll;
   max-height: 100vh;
 }
 

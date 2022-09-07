@@ -6,7 +6,6 @@ import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";  
 
 function FindrMenu() {
-    const userAtivo = sessionStorage.getItem("user");
 
     let items = [
         {label: 'Perfil', icon: 'pi pi-fw pi-user', url: ''},
@@ -22,7 +21,7 @@ function FindrMenu() {
         <div class="container-menu">
         <div class="user-return-container">
             <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" alt="" />
-           <h1>{userAtivo}</h1>
+           <h1>{sessionStorage.nomesuario}</h1>
         </div>
         <Menu model={items} className="menu-findr"/>
         </div>

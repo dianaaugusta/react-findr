@@ -13,6 +13,8 @@ function FindrLogin() {
     const [password, setPassword] = useState('');
     const loginPost = { email: description, password: password}
 
+
+
     const handleCallback = (childData) => {
         setLoginInfo(childData)
     }
@@ -26,6 +28,12 @@ function FindrLogin() {
             console.log(resposta)
             if (resposta.status === 200) {
                 navigate('/perfil')
+                api.get(`/freelancer/perfil/${description}`).then((resposta) => {
+                    console.log(resposta.data.idUserFPreelancer)
+                    sessionStorage.nomesuario = resposta.data.name;
+                    sessionStorage.idUsuario = resposta.data.idUserFreelancer;
+                    sessionStorage.email = resposta.data.email;
+                })
             }
             else if (resposta.status === 404) {
                 console.log("usuario incorreto!")
