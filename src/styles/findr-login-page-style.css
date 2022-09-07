@@ -39,6 +39,7 @@ body{
     border-radius: 15px;
     height: 40px;   
     color: white;
+    margin-top: 2%;
 }
 
 .saudacao-usuario .p-inputtext.p-component{
@@ -124,4 +125,26 @@ body{
 
 #btn-click-login{
     background-color: purple;
+}
+
+
+.type-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.type-login input{
+    accent-color: blueviolet;
+    cursor: pointer;
+}
+
+.type-freelancer{
+    width: 50%;
+    display: flex;
+}
+
+.type-contratante{
+    width: 50%;
+    display: flex;
 }

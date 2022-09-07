@@ -6,6 +6,7 @@ import FindrMatch from "./pages/match"
 import Perfil from "./pages/perfil";
 import HabilitsProject from "./pages/habilits-project"
 import HabilitsHabilit from "./pages/habilits-habilit"
+import Match from "./pages/match"
 
 function Rotas(){
     return(
@@ -18,6 +19,7 @@ function Rotas(){
                 <Route path="/perfil" element={<Perfil/>}/>
                 <Route path="/habilits/project" element={<HabilitsProject/>}/>
                 <Route path="/habilits/habilit" element={<HabilitsHabilit/>}></Route>
+                <Route path="/match" element={<Match/>}></Route>
             </Routes>
         </BrowserRouter>
     );

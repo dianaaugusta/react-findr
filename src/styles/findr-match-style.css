@@ -1,12 +1,55 @@
-.card-match{
+
+.content-match{
+    width: 80%;
+    height: 500px;
+    background-color: blueviolet;
     display: flex;
-    justify-content: space-around;
-    padding-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    justify-content: space-between;
 }
 
-.css-1m9128y {
-    display: none;
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
+.container-match{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+}
+
+.match-refused{
+    width: 14%;
+    height: 160px;
+    background-color: white;
+    margin-top: 15%;
+    border-radius: 100px;
+    margin-left: 5%;
+}
+
+.match-refused i{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25%;
+}
+
+.match-refused i:before{
+    color: red !important;
+}
+
+
+.match-information{
+    width: 50%;
+    height: 500px;
+    background-color: white;
+}
+
+.match-accepted{
+    width: 14%;
+    height: 160px;
+    background-color: white;
+    margin-top: 15%;
+    border-radius: 100px;
+    margin-left: 5%;
 }

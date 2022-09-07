@@ -11,7 +11,8 @@ function FindrLogin() {
     const [emailUser, setEmailUser] = useState('');
     const [password, setPassword] = useState('');
     const loginPost = { email: emailUser, password: password}
-
+    const [loginInfo, setLoginInfo] = useState('');
+    const [typeLogin, setTypeLoginRadio] = useState();
 
 
     const handleCallback = (childData) => {
@@ -19,26 +20,47 @@ function FindrLogin() {
     }
 
 
-
+    
     const navigate = useNavigate()
-
+    
     function autenticar() {
-        api.post("freelancer/login", loginPost).then((resposta) => {
-            console.log(resposta)
-            if (resposta.status === 200) {
-                navigate('/perfil')
-                api.get(`/freelancer/perfil/${description}`).then((resposta) => {
-                    console.log(resposta.data.idUserFPreelancer)
-                    sessionStorage.nomesuario = resposta.data.name;
-                    sessionStorage.idUsuario = resposta.data.idUserFreelancer;
-                    sessionStorage.email = resposta.data.email;
-                })
-            }
-            else if (resposta.status === 404) {
-                console.log("usuario incorreto!")
-                alert("Usuario e/ou senha incorreto")
-            }
-        })
+        
+
+        if(typeLogin === 'Freelancer'){
+            api.post("freelancer/login", loginPost).then((resposta) => {
+                console.log(resposta)
+                if (resposta.status === 200) {
+                    navigate('/habilits/habilit')
+                    api.get(`/freelancer/perfil/${emailUser}`).then((resposta) => {
+                        sessionStorage.idUsuario = resposta.data.idUserFreelancer;
+                        sessionStorage.nomeUsuario = resposta.data.name;
+                        sessionStorage.email = resposta.data.email;
+                    })
+                }
+                else if (resposta.status === 404) {
+                    console.log("usuario incorreto!")
+                    alert("Usuario e/ou senha incorreto")
+                }
+            })
+        }else{
+            api.post("contactor/login", loginPost).then((resposta) =>{
+                console.log(resposta)
+                if(resposta.status === 200){
+                    navigate('/habilits/project')
+                    api.get(`/contactor/perfil/${emailUser}`).then((resposta) =>{
+                        sessionStorage.idContactor = resposta.data.idContactor;
+                        sessionStorage.nomeUsuario = resposta.data.name;
+                        sessionStorage.email = resposta.data.email
+                    })
+                }
+                else if (resposta.status === 404) {
+                    console.log("usuario incorreto!")
+                    alert("Usuario e/ou senha incorreto")
+                }
+            })
+        }
+
+
     }
 
     return (
@@ -57,6 +79,16 @@ function FindrLogin() {
                     <br />
                     <input id="input_senha" placeholder="Senha" type="password" onInput={(evento) => { setPassword(evento.target.value) }} />
                     <br />
+                    <div class="type-login">
+                        <div class="type-freelancer">
+                            <input type="radio" name="typeLogin" value="Freelancer" onChange={e=>setTypeLoginRadio(e.target.value)}/>
+                            <p>Freelancer</p>
+                        </div>
+                        <div class="type-contratante">
+                            <input type="radio" name="typeLogin" value="Contratante" onChange={e=>setTypeLoginRadio(e.target.value)}/>
+                            <p>Contratante</p>
+                        </div>
+                    </div>
                     <button id="btn-click-login" onClick={() => autenticar()}>Fazer Login</button>
                     
                     <div className="password-options">

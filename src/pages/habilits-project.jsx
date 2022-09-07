@@ -16,9 +16,6 @@ function HabilitsProject() {
 
 
     function postProjectContratante(e) {
-
-        const userAtivo = sessionStorage.getItem("user");
-        window.sessionStorage.setItem("user", userAtivo);
         e.preventDefault();
 
         
@@ -31,15 +28,13 @@ function HabilitsProject() {
             levelKnowledge: levelKnowledgeInput,
             quantifyProfissionals: quantifyProfissionalsInput,
             contactor: {
-                idContactor: idContactor,
+                idContactor: sessionStorage.idContactor,
             }  
         }
 
         api.post("project", objProject).then(res =>{
+            console.log(res);
             alert("cadastrado com sucesso!");
-            api.get('/contactor').then((resposta=>{
-                sessionStorage.idContactor = resposta.data.idContactor
-            }))
         }).catch(erro => {
             alert("Erro no cadastro!");
             console.log(objProject)
@@ -146,7 +141,7 @@ function HabilitsProject() {
 
                         <div class="info-user">
                             <div class="info-user-contratante">
-                                <h1>Olá, Joyce!</h1>
+                                <h1>Olá, {sessionStorage.nomeUsuario}!</h1>
                                 <p>Conte-nos um pouco mais sobre os projetos que você possui</p>
                             </div>
 
