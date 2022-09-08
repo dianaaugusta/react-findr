@@ -1,44 +1,34 @@
-import FindrAutocomplete from "../components/findr-autocomplete";
-import FaqComponent from "../components/findr-faq-component";
 import FindrMenu from "../components/findr-menu"
 import '../styles/findr-match-style.css'
 import { useEffect } from "react";
 import { useState } from "react";
-import FindrBox from "../components/findr-box"
 import api from "../api";
-import CloseIcon from '@mui/icons-material/Close';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import Fade from '@mui/material/Fade';
-// import Carousel from 'react-material-ui-carousel'
+import * as React from 'react';
+
 function FindrMatch() {
-  const [userList, setUserList] = useState([]);
-  const [userTestList, setUserTestList] = useState([]);
-
-  useEffect(() => {
-    api.get("/freelancer").then((res) => {
-      setUserList(res.data);
-      console.log("dentro do use effect" + userTestList)
-    }).catch((err) => {
-      console.log(err);
-    })
-  }, [])
-
-
-
-
-  function awaitMatchUser(fkFreelancer){
-    api.post("/match/freelancer/" + {fkFreelancer}).then(res => {
-      if (res.status === 200) {
-        alert("Its a match!");
-    }
-    }).catch(erro => {
-      alert("Deu ruim!");
-      console.log(erro);
-    })
     
-  }
-  console.log("dps do user effetc" + userTestList)
-  return (
+    // const [imageSpecialty, setScialtyInput] = useState("");
+    // const [specialty, setSpecialty] = useState("");
+    // const [levelSpecialty, setLevelSpecialty] = useState("");
+    const [infoUser, setInfoUser] = useState([]);
+
+    useEffect(() => {
+
+        api.get(`project/${sessionStorage.idContactor}`).then((res) => {
+            setInfoUser(res.data);
+            console.log(res.data)
+        }).catch((err) => {
+            console.log(err);
+        })
+
+    }, [])
+
+// console.log("AAA", infoUser[0].levelKnowledge)
+
+
+
+  
+    return (
         <div class="container-match">
             <FindrMenu />
 
@@ -49,11 +39,30 @@ function FindrMatch() {
                 </div>
 
                 <div class="match-information">
-
+                    <div class="imagea-usuario"></div>
+                    <div className="img-user-logado"></div>
+                    <div class="name-user">
+                        <h2>{sessionStorage.nomeUsuario}</h2>                    
+                        <p>Projeto</p>
+                        <div class="descriptionProject">{sessionStorage.description}</div>
+                        <div class="technologics">
+                            <h3>Tecnologias</h3>
+                            <div class="tecnologics-and-levels">
+                                <div class="tecnolgics-info">
+                                    <div class="imagem-tecno"></div>
+                                    {infoUser.map((res) => <div levelKnowledge= {res.levelKnowledge}/>) }
+                                    <p></p>
+                                    {/* <div class="bars-levels"></dp */}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="imagem-two"></div>
                 </div>
 
                 <div class="match-accepted">
-
+                    <i class="pi pi-fw pi-heart-fill"></i>
                 </div>
 
             </div>

@@ -35,6 +35,9 @@ function FindrLogin() {
                         sessionStorage.idUsuario = resposta.data.idUserFreelancer;
                         sessionStorage.nomeUsuario = resposta.data.name;
                         sessionStorage.email = resposta.data.email;
+                        sessionStorage.ocupationArea = resposta.data.ocupationArea;
+                        sessionStorage.avaliableTime = resposta.data.avaliableTime;
+                        sessionStorage.levelKnowledgeInput = resposta.data.levelKnowledgeInput
                     })
                 }
                 else if (resposta.status === 404) {
@@ -50,7 +53,8 @@ function FindrLogin() {
                     api.get(`/contactor/perfil/${emailUser}`).then((resposta) =>{
                         sessionStorage.idContactor = resposta.data.idContactor;
                         sessionStorage.nomeUsuario = resposta.data.name;
-                        sessionStorage.email = resposta.data.email
+                        sessionStorage.email = resposta.data.email;
+                        sessionStorage.description = resposta.data.description;
                     })
                 }
                 else if (resposta.status === 404) {

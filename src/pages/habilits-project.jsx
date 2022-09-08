@@ -2,6 +2,7 @@ import { useState } from "react";
 import FindrMenu from "../components/findr-menu";
 import "../styles/findr-habilits-project-style.css";
 import api from '../api';
+import { Navigate } from "react-router-dom";
 
 
 function HabilitsProject() {
@@ -35,6 +36,7 @@ function HabilitsProject() {
         api.post("project", objProject).then(res =>{
             console.log(res);
             alert("cadastrado com sucesso!");
+            window.location.href = "/match"
         }).catch(erro => {
             alert("Erro no cadastro!");
             console.log(objProject)
