@@ -36,15 +36,6 @@
     color: red !important;
 }
 
-
-.match-information{
-    width: 50%;
-    height: 550px;
-    background-color: white;
-    background-color: white;
-    border-radius: 30px;
-}
-
 .match-accepted{
     width: 14%;
     height: 150px;
@@ -67,81 +58,5 @@
     color: green !important;
 }
 
-.imagea-usuario{
-    background-image: url("../imgs/match-img-1.png");
-    width: 50%;
-    height: 290px;
-    margin: -45px 0px 0px -102px;
-}
 
-.img-user-logado{
-    width: 18%;
-    background-image: url("../imgs/2.jpg");
-    background-size: 100px 100px;
-    height: 100px;
-    margin-top: -215px;
-    margin-left: 20px;
-    display: flex;
-    background-color: aqua;
-    border-radius: 50px;
-}
-
-.name-user{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    margin-top: -40px;
-}
-
-.name-user h2{
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.name-user p{
-    font-size: 20px;
-}
-
-.descriptionProject{
-    font-size: 15px;
-    width: 70%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tecnolgics-info{
-    width: 50%;
-    height: 55px;
-    display: inline-flex;
-    justify-content: space-around;
-}
-
-.tecnolgics-info p{
-    margin-top: 3%;
-}
-
-.imagem-tecno{
-    background-image: url("../imgs/React-icon.svg.png");
-    width: 18%;
-    height: 50px;
-    background-size: 50px 50px;
-    display: flex;
-}
-
-.bars-levels{
-    width: 40%;
-    height: 30px;
-    background-color: green;
-    border-radius: 15px;
-    margin-top: 3%;
-}
-
-.imagem-two{
-    background-image: url("../imgs/img-match-2.png");
-    width: 31%;
-    height: 206px;
-    margin: 59px 0px 0px 380px;
-}
 

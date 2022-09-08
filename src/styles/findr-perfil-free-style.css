@@ -1,5 +1,5 @@
 .body{
-    background-color: rgb(204,204,204);
+    background-color: rgb#DAE4E9;;
 }
 
 .screen-perfil{
@@ -31,26 +31,26 @@
     justify-content: center;
     margin-bottom: 0;
     flex-direction: column;
+    box-shadow: 1px 1px 1px 1px #23232323;
 }
 
 .certificacoes-titulo {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 100%;
-    height: 15%;
     color: rgb(108, 99, 255);
 }
 
 
 .certificacoes-titulo h1{
+    margin-top: 0;
+    color: rgb(108, 99, 255);
+    width: 100%;
     font-size: 23px;
+    display: flex;
+    justify-content: center;
 }
 
-.certificacoes-titulo h1{
-    display: flex;
-    text-align: center;
-}
 
 .certificado-info{
     display: flex;
@@ -58,9 +58,9 @@
 }
 
 .certificado-info img{
-    height: 80px;
-    width: 80px;
-    padding: 18px;
+    height: 70px;
+    width: 70px;
+    padding: 14px;
     margin-bottom: 0;
 }
 
@@ -91,13 +91,15 @@
     margin: 20px;
     margin-bottom: 0;
     overflow: auto;
+    box-shadow: 1px 1px 1px 1px #23232323;
 }
 
 .matchs h1{
     margin-top: 0;
     color: rgb(108, 99, 255);
+    width: 100%;
     font-size: 23px;
-    margin-bottom: 30px;
+    justify-content: center;
 }
 
 .grid-container{

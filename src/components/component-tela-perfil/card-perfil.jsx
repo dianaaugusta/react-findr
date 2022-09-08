@@ -23,10 +23,10 @@ function CardPerfil(props) {
                     <h3>{props.name}</h3>
 
                     <div class="card-info-dev-perfil">
-                        <p>{props.technologyUsed} <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="" /> NOME DO GIT /</p>
+                        <p>{sessionStorage.email}<img src="https://i.pinimg.com/originals/8f/c3/7b/8fc37b74b608a622588fbaa361485f32.png" alt=""/></p>
                     </div>
                     <div class="card-info-dev-perfil">
-                        <p>{props.state},{props.city} <img src="https://png.pngtree.com/png-vector/20210216/ourlarge/pngtree-location-icon-in-flat-style-png-image_2914820.jpg" alt="" /></p>
+                        <p>{props.state},{props.city}<img src="https://png.pngtree.com/png-vector/20210216/ourlarge/pngtree-location-icon-in-flat-style-png-image_2914820.jpg" alt="" /></p>
                     </div>
                 </div>
                 <div class="enfeite2">

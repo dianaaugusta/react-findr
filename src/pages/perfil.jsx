@@ -15,8 +15,12 @@ function Perfil() {
     useEffect(() => {
 
         api.get(`/match/projetos/${sessionStorage.idUsuario}`).then((res) => {
-            setMatchs(res.data);
-            console.log()
+            console.log(res.data)
+            if (res == null) {
+                setMatchs(res.data.null);
+            } else {
+                setMatchs(res.data);
+            }
             console.log(res.data)
         }).catch((err) => {
             console.log(err);
@@ -34,7 +38,6 @@ function Perfil() {
         })
 
     }, [])
-
 
     return (
         <div class="screen-perfil">
@@ -82,8 +85,8 @@ function Perfil() {
                         </div>
                     </div>
                     <div className="matchs">
+                        <h1>Matchs</h1>
                         <div className="container">
-                            <h1>Matchs</h1>
                             <div className="grid-container">
                                 {matchs.map((item) => <CardMatch name={item.name} nameProject={item.nameProject} />)}
                             </div>

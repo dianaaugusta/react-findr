@@ -6,6 +6,7 @@
     justify-content: center;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px #23232323;
 }
 .card-perfil-info{
     display: flex;
@@ -23,8 +24,8 @@
 .card-info-dev-perfil img{
     margin-top: 0;
     margin-bottom: 0;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
 }
 
 .enfeite1{
