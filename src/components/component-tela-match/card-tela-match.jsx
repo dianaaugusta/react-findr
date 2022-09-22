@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../component-tela-match/card-tela-match.css"
 
+
 function CardTelaMatch(props) {
     const [name, setNameContactor] = useState(props.name)
     const [descriptionProject, setDescriptionProject] = useState(props.descriptionProject)
@@ -30,6 +31,7 @@ function CardTelaMatch(props) {
             </div>
             <div class="imagem-two"></div>
         </div>
+
     )
 }
 

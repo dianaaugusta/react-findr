@@ -9,6 +9,7 @@ import FaqComponent from "./components/findr-faq-component";
 import FindrLogin from "./pages/login-findr";
 import Cadastro from "./pages/cadastro";
 import Perfil from "./pages/perfil";
+import Match from "./pages/match"
 import Rotas from "./routes";
 
 function App() {

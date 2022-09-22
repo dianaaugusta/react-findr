@@ -8,11 +8,20 @@ import * as React from 'react';
 
 function FindrMatch() {
 
-    // const [imageSpecialty, setScialtyInput] = useState("");
-    // const [specialty, setSpecialty] = useState("");
-    // const [levelSpecialty, setLevelSpecialty] = useState("");
-    const [infoProjects, setProject] = useState([]);
+    const [listCard, setListCard] = useState([]);
 
+    function populaListCard(){
+        infoProjects.map((projeto) => {
+            setListCard(
+            <CardTelaMatch 
+            name = {projeto.name}
+            descriptionProject = {projeto.descriptionProject}
+            requiredArea = {projeto.requiredArea}
+            requiredLanguages = {projeto.requiredLanguages}/>)
+        })
+    }
+
+    const [infoProjects, setProject] = useState([]);
     useEffect(() => {
 
         api.get(`project`).then((res) => {
@@ -21,37 +30,20 @@ function FindrMatch() {
         }).catch((err) => {
             console.log(err);
         })
-
     }, [])
 
-    // console.log("AAA", infoUser[0].levelKnowledge)
-
-
-
+    console.log()
 
     return (
         <div class="container-match">
             <FindrMenu />
 
             <div class="content-match">
-
-                <div class="match-refused">
-                    <i class="pi pi-fw pi-times"></i>
-                </div>
-
+                <button onClick={populaListCard}></button>
+            
                 {
-                    infoProjects.map((item) => 
-                    <CardTelaMatch 
-                    name={item.nameProject} 
-                    descriptionProject={item.descriptionProject} 
-                    requiredArea={item.requiredArea}
-                    requiredLanguages={item.requiredLanguages} />)
+                    listCard.map[0]
                 }
-
-                <div class="match-accepted">
-                    <i class="pi pi-fw pi-heart-fill"></i>
-                </div>
-
             </div>
 
         </div>
