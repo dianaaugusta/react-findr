@@ -21,13 +21,14 @@ form{
 
 .habilits-description{
     width: 70%;
+    margin-top: 3%;
 }
 
 .habilits-description h2{
     display: flex;
     align-content: center;
     justify-content: space-around;
-    color: blueviolet;
+    color: #4B1EC8;
 }
 
 .combobox-habilits{
@@ -42,14 +43,14 @@ form{
     margin-top: 1%;
     height: 30px;
     display: flex;
-    border-color: blueviolet;
+    border-color: #4B1EC8;
     border-radius: 5px;
     outline: 0;
-    color: blueviolet;
+    color: #4B1EC8;
 }
 
 .info-user{
-    background-color: blueviolet;
+    background-color: #4B1EC8;
     width: 40%;
     height: 585px;
     border-radius: 0px 75px 75px 0px;
@@ -62,13 +63,13 @@ form{
 
 .title{
     font-size: 12px;
-    color: blueviolet;
+    color: #4B1EC8;
     font-weight: bold;
     margin-top: 2%;
 }
 
 .level-habilits p{
-    color: blueviolet;
+    color: #4B1EC8;
 }
 
 .button-registration-habilit{
@@ -83,7 +84,7 @@ form{
     background-color: rgb(137, 43, 226);
     border-radius: 5px;
     outline: 0;
-    border: 2px solid blueviolet;
+    border: 2px solid #4B1EC8;
     color: #EDEDED;
     width: 50%;
     justify-content: center;
@@ -104,7 +105,7 @@ form{
 }
 
 .level-beginner input{
-    accent-color: blueviolet;
+    accent-color: #4B1EC8;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -116,7 +117,7 @@ form{
 }
 
 .level-intermediary input{
-    accent-color: blueviolet;
+    accent-color: #4B1EC8;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -128,7 +129,7 @@ form{
 }
 
 .level-advanced input{
-    accent-color: blueviolet;
+    accent-color: #4B1EC8;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -141,12 +142,12 @@ form{
 
 .title-project p{
     font-size: 15px;
-    color: blueviolet;
+    color: #4B1EC8;
     font-weight: bold;
 }
 
 .title-project input{
-    border: 2px solid blueviolet;
+    border: 2px solid #4B1EC8;
     border-radius: 7px;
     width: 87%;
     outline: 0;
@@ -161,7 +162,7 @@ form{
 
 .description-project p{
     font-size: 15px;
-    color: blueviolet;
+    color: #4B1EC8;
     font-weight: bold
 }
 
@@ -170,7 +171,7 @@ form{
 }
 
 .description textarea{
-    border: 2px solid blueviolet;
+    border: 2px solid #4B1EC8;
     border-radius: 7px;
     width: 87%;
     height: 80px;
@@ -183,7 +184,7 @@ form{
 }
 
 .requiredArea input{
-    border: 2px solid blueviolet;
+    border: 2px solid #4B1EC8;
     border-radius: 7px;
     width: 87%;
     outline: 0;
@@ -195,7 +196,7 @@ form{
 }
 
 .quantifyProfissionals input{
-    border: 2px solid blueviolet;
+    border: 2px solid #4B1EC8;
     border-radius: 7px;
     width: 87%;
     outline: 0;
@@ -249,7 +250,7 @@ form{
 .btn-contratante button{
     margin-top: 15%;
     outline: 0;
-    background-color: blueviolet;
+    background-color: #4B1EC8;
     border: 2px solid #EDEDED;
     color: #EDEDED;
     display: flex;
@@ -262,7 +263,7 @@ form{
 
 .btn-cadastrar button{
     margin-top: 20%;
-    color: blueviolet;
+    color: #4B1EC8;
     display: flex;
     margin-left: auto;
     margin-right: auto;
