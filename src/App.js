@@ -11,8 +11,21 @@ import Cadastro from "./pages/cadastro";
 import Perfil from "./pages/perfil";
 import Match from "./pages/match"
 import Rotas from "./routes";
+import { useEffect } from "react";
 
 function App() {
+
+    function addClass() {
+      var addStyleToMenu = document.querySelector(".menu-findr ul li:nth-child(6)");
+      if(addStyleToMenu != undefined){
+        addStyleToMenu.classList.add("btn-exit")
+      }
+    }
+
+    useEffect(() => {
+      addClass();
+    })
+
   return (
     <>
     <Rotas/>
