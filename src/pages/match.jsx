@@ -7,23 +7,10 @@ import api from "../api";
 import * as React from 'react';
 
 function FindrMatch() {
-
-    const [listCard, setListCard] = useState([]);
-
-    function populaListCard(){
-        infoProjects.map((projeto) => {
-            setListCard(
-            <CardTelaMatch 
-            name = {projeto.name}
-            descriptionProject = {projeto.descriptionProject}
-            requiredArea = {projeto.requiredArea}
-            requiredLanguages = {projeto.requiredLanguages}/>)
-        })
-    }
-
     const [infoProjects, setProject] = useState([]);
-    useEffect(() => {
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
+    useEffect(() => {
         api.get(`project`).then((res) => {
             setProject(res.data);
             console.log(res.data)
@@ -32,20 +19,47 @@ function FindrMatch() {
         })
     }, [])
 
-    console.log()
+    const handleAccept = () => {
+        const project = infoProjects[selectedIndex];
+        api.post('/like/freelancer/' + sessionStorage.idUsuario + '/' + project.contactor.idContactor + '/true/')
+        .then(res => {
+            setSelectedIndex(selectedIndex + 1);
+            alert("Você deu Like no projeto " + project.nameProject)
+        })
+    }
+
+    const handleRefuse = () => {
+            setSelectedIndex(selectedIndex + 1);
+    }
+
+
+    const renderProject = () => {
+        const project = infoProjects[selectedIndex];
+
+        if (project === undefined) {
+            return (
+                <span>Sem projeto atualize a pagina</span>
+            )
+        }
+
+        return (
+            <CardTelaMatch 
+                name = {project.name}
+                descriptionProject = {project.descriptionProject}
+                requiredArea = {project.requiredArea}
+                requiredLanguages = {project.requiredLanguages}
+                onAccept={handleAccept}
+                onRefuse={handleRefuse}
+            />
+        )
+    }
 
     return (
-        <div class="container-match">
+        <div className="container-match">
             <FindrMenu />
-
-            <div class="content-match">
-                <button onClick={populaListCard}></button>
-            
-                {
-                    listCard.map[0]
-                }
+            <div className="content-match">
+                {renderProject()}
             </div>
-
         </div>
     );
 }
