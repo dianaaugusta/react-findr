@@ -11,6 +11,20 @@ import  'react-circular-progressbar/dist/styles.css' ;
 
 function Dashboard(){
 
+
+
+
+    // function totalMatchs(){
+        api.get(`/dashboard/count-match`).then(res => {
+            console.log("AAAA", res)
+        }).catch(erro => {
+            console.log(erro)
+        })
+    // }
+
+
+
+
     const [chartData] = useState({
         datasets: [
             {
