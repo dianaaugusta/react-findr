@@ -1,5 +1,4 @@
 .ajuste-tela{
-    padding: 5px;
     height: 100vh;
     background-color: darkgrey;
 }
@@ -25,6 +24,8 @@
     width: 70%;
     align-items: center;
     background-color: white;
+    border-radius: 10px;
+    margin-top: 4px;
 }
 
 .container-inputs input{
@@ -36,12 +37,13 @@
 .text-input{
     text-align: center;
     padding-left: 2vw;
-    margin-bottom: 90vh;
+    margin-bottom: 94vh;
     position: absolute;
 }
 
 .individual-input-cadastro p{
     font-size: 10px;
+    margin-top: 30px;
 }
 
 .text-acceptance{
