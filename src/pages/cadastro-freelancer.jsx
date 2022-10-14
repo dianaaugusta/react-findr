@@ -4,7 +4,7 @@ import api from '../api';
 import React, { useState } from 'react';
 
 
-function Cadastro() {
+function CadastroFreelancer() {
 
     const [nameInput, setNameInput] = useState("");
     const [cpfInput, setCpfInput] = useState("");
@@ -144,4 +144,4 @@ function Cadastro() {
     );
 }
 
-export default Cadastro;
+export default CadastroFreelancer;

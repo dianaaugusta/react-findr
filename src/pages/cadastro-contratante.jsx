@@ -21,23 +21,22 @@ function CadastroContratante() {
         e.preventDefault();
 
         const objFreelancer = {
-            idUserFreelancer: "",
-            avaliableTime: tempoInput,
-            fkPlanFreelancer: {
-                idPlan: planoInput,
-                planType: "",
-                quantityClicks: ""
-            },
-            name: nameInput,
-            email: emailInput,
-            password: senhaInput,
-            cpf: cpfInput,
-            cnpj: cpfInput,
-            phoneContact: telefoneInput,
-            country: nacionalidadeInput,
-            state: estadoInput,
-            city: cidadeInput
+        name: nameInput,
+        email: emailInput,
+        password: senhaInput,
+        cpf: cpfInput,
+        cnpj: cpfInput,
+        phoneContact: telefoneInput,
+        country: nacionalidadeInput,
+        state: estadoInput,
+        city: cidadeInput,
+        idContactor: "",
+        fkPlanContactor: {
+            idPlan: planoInput,
+            planType: "",
+            quantityClicks: ""
         }
+    }
 
         const loginPost = { 
             nameUser: nameInput, 
@@ -73,7 +72,7 @@ function CadastroContratante() {
                                 })} />
                             </div>
                             <div class="individual-input-cadastro">
-                                <p>CPF:</p>
+                                <p>CNPJ:</p>
                                 <input type="text" value={cpfInput} onChange={((event) => {
                                     setCpfInput(event.target.value)
                                 })} />
