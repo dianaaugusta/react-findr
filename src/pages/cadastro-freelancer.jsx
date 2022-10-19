@@ -92,13 +92,13 @@ function CadastroFreelancer() {
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Senha:</p>
-                                <input type="text" value={senhaInput} onChange={((event) => {
+                                <input type="password" value={senhaInput} onChange={((event) => {
                                     setSenhaInput(event.target.value)
                                 })} />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Confirmar senha:</p>
-                                <input type="text" />
+                                <input type="password" />
                             </div>
                             <div class="individual-input-cadastro">
                                 <p>Nacionalidade</p>
