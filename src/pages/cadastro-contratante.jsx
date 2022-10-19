@@ -4,7 +4,7 @@ import api from '../api';
 import React, { useState } from 'react';
 
 
-function Cadastro() {
+function CadastroContratante() {
 
     const [nameInput, setNameInput] = useState("");
     const [cpfInput, setCpfInput] = useState("");
@@ -21,30 +21,29 @@ function Cadastro() {
         e.preventDefault();
 
         const objFreelancer = {
-            idUserFreelancer: "",
-            avaliableTime: tempoInput,
-            fkPlanFreelancer: {
-                idPlan: planoInput,
-                planType: "",
-                quantityClicks: ""
-            },
-            name: nameInput,
-            email: emailInput,
-            password: senhaInput,
-            cpf: cpfInput,
-            cnpj: cpfInput,
-            phoneContact: telefoneInput,
-            country: nacionalidadeInput,
-            state: estadoInput,
-            city: cidadeInput
+        name: nameInput,
+        email: emailInput,
+        password: senhaInput,
+        cpf: cpfInput,
+        cnpj: cpfInput,
+        phoneContact: telefoneInput,
+        country: nacionalidadeInput,
+        state: estadoInput,
+        city: cidadeInput,
+        idContactor: "",
+        fkPlanContactor: {
+            idPlan: planoInput,
+            planType: "",
+            quantityClicks: ""
         }
+    }
 
         const loginPost = { 
             nameUser: nameInput, 
             password: senhaInput 
         }
     
-        api.post("freelancer", objFreelancer).then(res => {
+        api.post("contactor", objFreelancer).then(res => {
             alert("cadastrado com sucesso!");
             sessionStorage.setItem("user", nameInput);
             window.location.href="/login";
@@ -73,7 +72,7 @@ function Cadastro() {
                                 })} />
                             </div>
                             <div class="individual-input-cadastro">
-                                <p>CPF:</p>
+                                <p>CNPJ:</p>
                                 <input type="text" value={cpfInput} onChange={((event) => {
                                     setCpfInput(event.target.value)
                                 })} />
@@ -144,4 +143,4 @@ function Cadastro() {
     );
 }
 
-export default Cadastro;
+export default CadastroContratante;

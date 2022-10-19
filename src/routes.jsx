@@ -1,8 +1,10 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import FindrLogin from "./pages/login-findr";
 import Suporte from "./pages/suporte";
-import Cadastro from "./pages/cadastro";
+import CadastroFreelancer from "./pages/cadastro-freelancer";
+import CadastroContratante from "./pages/cadastro-contratante";
 import FindrMatch from "./pages/match"
+import FindrMatchContratante from "./pages/match-contratante"
 import Perfil from "./pages/perfil";
 import HabilitsProject from "./pages/habilits-project";
 import HabilitsHabilit from "./pages/habilits-habilit";
@@ -15,12 +17,14 @@ function Rotas(){
             <Routes>
                 <Route path="/login" element={<FindrLogin />} />
                 <Route path="/suporte" element={<Suporte />} />
-                <Route path="/cadastro" element={<Cadastro />} />
+                <Route path="/cadastro-freelancer" element={<CadastroFreelancer />} />
+                <Route path="/cadastro-contratante" element={<CadastroContratante />} />
                 <Route path="/main" element={<FindrMatch />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/habilits/project" element={<HabilitsProject />} />
                 <Route path="/habilits/habilit" element={<HabilitsHabilit />} />
                 <Route path="/match" element={<Match />} />
+                <Route path="/match-contactor" element={<FindrMatchContratante />} />
                 <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </BrowserRouter>

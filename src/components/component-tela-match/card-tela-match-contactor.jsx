@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../component-tela-match/card-tela-match.css"
 
 
-function CardTelaMatch({ name, descriptionProject, requiredArea, requiredLanguages, onAccept, onRefuse }) {
+function CardTelaMatch({ name, ocupationArea, tecnologias, disponibilidade, onAccept, onRefuse}) {
     return (
         <>
             <div className="button-align">
@@ -14,18 +14,17 @@ function CardTelaMatch({ name, descriptionProject, requiredArea, requiredLanguag
                 <div className="imagea-usuario"></div>
                 <div className="img-user-logado"></div>
                 <div className="name-user">
-                    <h1>{name}</h1>
-                    <h3>Projeto</h3>
-                    {descriptionProject}
+                    <h3>{name}</h3>
+                    <h3>Profissao</h3>
+                    <p>{ocupationArea}</p>
+                    <h3>Tecnologias</h3>
+                    {tecnologias}
                     <div className="technologics">
                         <div className="tecnologics-and-levels">
                             <div className="tecnolgics-info">
                                 <div className="imagem-tecno"></div>
-                                <h3>Área Requirida</h3>
-                                <p>{requiredArea}</p>
-                                <h3>Linguagens requeridas</h3>
-                                <p>{requiredLanguages}</p>
-                                {/* <div className="bars-levels"></dp */}
+                                <h3>Disponibilidade</h3>
+                                <p>{disponibilidade}</p>
                             </div>
                         </div>
                     </div>
