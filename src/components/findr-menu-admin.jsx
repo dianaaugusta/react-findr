@@ -8,12 +8,12 @@ import imgFindr from "../imgs/logo-findr.png"
 function FindrMenuAdmin() {
 
     let items = [
-        {label: 'Perfil', icon: 'pi pi-fw pi-user', url: ''},
-        {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: ''},
+        {label: 'Perfil', icon: 'pi pi-fw pi-user', url: '/perfil'},
+        {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: '/dashboard'},
         {label: 'Conexões', icon: 'pi pi-fw pi-sitemap',  url: ''},
-        {label: 'Matchs', icon: 'pi pi-fw pi-users',  url: ''},
-        {label: 'Projetos', icon: 'pi pi-fw pi-id-card',  url: ''},
-        {label: 'Sair', icon: 'pi pi-fw pi-sign-out',  url: ''}
+        {label: 'Matchs', icon: 'pi pi-fw pi-users',  url: '/match'},
+        {label: 'Projetos', icon: 'pi pi-fw pi-id-card',  url: '/perfil'},
+        {label: 'Sair', icon: 'pi pi-fw pi-sign-out',  url: 'http://52.202.44.244:80'}
     ]
 
     return (
