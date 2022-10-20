@@ -20,7 +20,7 @@ function CadastroContratante() {
     function postUser(e) {
         e.preventDefault();
 
-        const objFreelancer = {
+        const objContactor = {
         name: nameInput,
         email: emailInput,
         password: senhaInput,
@@ -43,13 +43,12 @@ function CadastroContratante() {
             password: senhaInput 
         }
     
-        api.post("contactor", objFreelancer).then(res => {
+        api.post("contactor", objContactor).then(res => {
             alert("cadastrado com sucesso!");
             sessionStorage.setItem("user", nameInput);
             window.location.href="/login";
         }).catch(erro => {
             alert("Erro no cadastro!");
-            console.log(objFreelancer)
             console.log(erro);
         })
     }

@@ -9,24 +9,10 @@ import * as React from 'react';
 function FindrMatchContratante() {
     const [infoFreelancer, setFreelancer] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [infoSpecialty, setSpecialty] = useState([]);
     useEffect(() => {
-        api.get(`freelancer`).then((res) => {
+        api.get(`specialty`).then((res) => {
             setFreelancer(res.data);
             console.log(res.data)
-
-            
-                const freelancer = infoFreelancer[selectedIndex];
-                console.log(freelancer)
-                console.log(infoFreelancer)
-                api.get(`/specialty/freelancer/${freelancer.idUserFreelancer}`).then((res) => {
-                    setSpecialty(res.data);
-                    console.log(res.data)
-                }).catch((err) => {
-                    console.log(err);
-                })
-          
-
         }).catch((err) => {
             console.log(err);
         })
@@ -35,10 +21,14 @@ function FindrMatchContratante() {
 
     const handleAccept = () => {
         const freelancer = infoFreelancer[selectedIndex];
-        api.post('/like/freelancer/' + sessionStorage.idContactor + '/' + freelancer.idFreelancer + '/true/')
+        api.get('freelancer')
+        .then(res => {
+
+        })
+        api.post('/like/freelancer/' + sessionStorage.idContactor + '/' + freelancer.fkFreelancer.idUserFreelancer + '/true/')
         .then(res => {
             setSelectedIndex(selectedIndex + 1);
-            alert("Você deu Like no projeto " + freelancer.name)
+            alert("Você deu Like no Freelancer " + freelancer.fkFreelancer.name)
         })
     }
 
@@ -48,11 +38,9 @@ function FindrMatchContratante() {
 
 
     const renderFreelancer = () => {
-        const freelacer = infoFreelancer[selectedIndex];
-        const specialty = infoSpecialty[selectedIndex];
-        console.log(specialty)
+        const freelancer = infoFreelancer[selectedIndex];
 
-        if (freelacer === undefined) {
+        if (freelancer === undefined) {
             return (
                 <span>Sem freelancers atualize a pagina</span>
             )
@@ -60,10 +48,10 @@ function FindrMatchContratante() {
 
         return (
             <CardTelaMatchContratante 
-                name = {freelacer.name}
-                // // ocupationArea = {specialty.ocupationArea}
-                // tecnologias = {specialty.technologyUsed}
-                // disponibilidade = {freelacer.avaliableTime}
+                name = {freelancer.fkFreelancer.name}
+                ocupationArea = {freelancer.ocupationArea}
+                tecnologias = {freelancer.technologyUsed}
+                disponibilidade = {freelancer.fkFreelancer.avaliableTime}
                 onAccept={handleAccept}
                 onRefuse={handleRefuse}
             />

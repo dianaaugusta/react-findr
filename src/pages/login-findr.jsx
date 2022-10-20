@@ -50,7 +50,7 @@ function FindrLogin() {
                 console.log(resposta)
                 if(resposta.status === 200){
                     navigate('/habilits/project')
-                    api.get(`/contactor/perfil/${emailUser}`).then((resposta) =>{
+                    api.get(`/contactor/perfil/email/${emailUser}`).then((resposta) =>{
                         sessionStorage.idContactor = resposta.data.idContactor;
                         sessionStorage.nomeUsuario = resposta.data.name;
                         sessionStorage.email = resposta.data.email;
