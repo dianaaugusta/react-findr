@@ -1,9 +1,9 @@
 .content-habilit{
     background-color: white;
-    width: 94%;
-    height: 585px;
-    margin-left: 3%;
-    margin-top: 2%;
+    width: 75%;
+    height: 480px;
+    margin-left: 23%;
+    margin-top: 5%;
     border-radius: 75px;
     display: flex;
 }
@@ -184,12 +184,12 @@ form{
 .info-user-freelancer{
     background-color: #4B1ECB;
     width: 40%;
-    height: 585px;
+    height: 480px;
     border-radius: 0px 75px 75px 0px;
 }
 
 .info-user-freelancer-content{
-    margin-top: 50%;
+    margin-top: 10%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -207,16 +207,18 @@ form{
 }
 
 .btn-freelancer button{
-    margin-top: 15%;
+    margin-top: 5%;
     outline: 0;
     background-color: #4B1ECB;
     border: 2px solid #EDEDED;
     color: #EDEDED;
     display: flex;
+    width: 112px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    padding: 0 30px 0 30px;
+    padding: 0 30px 0 0px;
     font-size: 20px;
     cursor: pointer;
 }
@@ -230,10 +232,11 @@ form{
     font-size: 15px;
     background-color: #EDEDED;
     border-radius: 7px;
+    height: auto;
     outline: 0;
     border: none;
     text-transform: uppercase;
-    padding: 5px 40px 5px 40px;
+    padding: 5px 40px 5px 10px;
     cursor: pointer;
 }
 
