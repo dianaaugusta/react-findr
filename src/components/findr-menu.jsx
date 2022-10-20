@@ -5,13 +5,12 @@ import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";  
 
 function FindrMenu() {
-
     let items = [
         {label: 'Perfil', icon: 'pi pi-fw pi-user', url: '/perfil'},
         {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: ''},
         {label: 'Conexões', icon: 'pi pi-fw pi-sitemap',  url: ''},
         {label: 'Matchs', icon: 'pi pi-fw pi-users',  url: '/match'},
-        {label: 'Projetos', icon: 'pi pi-fw pi-id-card',  url: '/perfil'},
+        {label: 'Projetos', icon: 'pi pi-fw pi-id-card',  url: ''},
         {label: 'Sair', icon: 'pi pi-fw pi-sign-out',  url: 'http://52.202.44.244:80'}
     ]
 

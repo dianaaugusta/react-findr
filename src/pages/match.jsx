@@ -21,7 +21,7 @@ function FindrMatch() {
 
     const handleAccept = () => {
         const project = infoProjects[selectedIndex];
-        api.post('/like/freelancer/' + sessionStorage.idUsuario + '/' + infoProjects.fkContactor + '/true/')
+        api.post('/like/freelancer/' + sessionStorage.idUsuario + '/' + project.fkContactor.idContactor + '/true/')
         .then(res => {
             setSelectedIndex(selectedIndex + 1);
             alert("Você deu Like no projeto " + project.nameProject)

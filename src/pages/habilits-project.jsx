@@ -28,7 +28,7 @@ function HabilitsProject() {
             requiredLanguages: habiitProjectInput,
             levelKnowledge: levelKnowledgeInput,
             quantifyProfissionals: quantifyProfissionalsInput,
-            contactor: {
+            fkContactor: {
                 idContactor: sessionStorage.idContactor,
             }
         }
