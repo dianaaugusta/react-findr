@@ -16,9 +16,15 @@ import { useEffect } from "react";
 function App() {
 
     function addClass() {
-      var addStyleToMenu = document.querySelector(".menu-findr ul li:nth-child(6)");
-      if(addStyleToMenu != undefined){
-        addStyleToMenu.classList.add("btn-exit")
+      var addStyleToMenuExit = document.querySelector(".menu-findr ul li:nth-child(6)");
+      var addStyleToMenuProfile = document.querySelector(".menu-findr ul li:nth-child(1)");
+      
+      if(addStyleToMenuExit != undefined){
+        addStyleToMenuExit.classList.add("btn-exit")
+      }
+
+      if(addStyleToMenuProfile != undefined){
+        addStyleToMenuProfile.classList.add("btn-profile")
       }
     }
 

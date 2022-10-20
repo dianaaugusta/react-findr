@@ -27,7 +27,11 @@
 }
 
 .btn-exit{
-    margin-top: 70%;
+    margin-top: 60%;
+}
+
+.btn-profile{
+    margin-top: 10%;
 }
 
 .user-return-container h1{

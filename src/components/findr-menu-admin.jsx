@@ -3,12 +3,13 @@ import '../styles/findr-menu-style.css'
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";  
+import imgFindr from "../imgs/logo-findr.png"
 
-function FindrMenu() {
+function FindrMenuAdmin() {
 
     let items = [
         {label: 'Perfil', icon: 'pi pi-fw pi-user', url: '/perfil'},
-        {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: ''},
+        {label: 'Dashboards', icon: 'pi pi-fw pi-chart-line',  url: '/dashboard'},
         {label: 'Conexões', icon: 'pi pi-fw pi-sitemap',  url: ''},
         {label: 'Matchs', icon: 'pi pi-fw pi-users',  url: '/match'},
         {label: 'Projetos', icon: 'pi pi-fw pi-id-card',  url: '/perfil'},
@@ -19,7 +20,7 @@ function FindrMenu() {
         <>
         <div class="container-menu">
         <div class="user-return-container">
-            <img src="https://i.pinimg.com/originals/12/5e/00/125e00eedea84514eaed380991657c44.jpg" alt="" />
+            <img src=   {imgFindr} alt="" />
            <h1>{sessionStorage.nomesuario}</h1>
         </div>
         <Menu model={items} className="menu-findr"/>
@@ -30,4 +31,4 @@ function FindrMenu() {
 
 }
 
-export default FindrMenu;
+export default FindrMenuAdmin;
